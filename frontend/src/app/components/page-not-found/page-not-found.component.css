@@ -1,0 +1,9 @@
+mat-card{
+    margin: 50px;
+    padding: 25px;
+    text-align: center;
+}
+mat-card-header{
+    justify-content: center;
+    color: #ff4081;
+}

@@ -1,0 +1,63 @@
+<mat-sidenav-container>
+    <mat-sidenav mode="side" #sideNav>
+        <mat-nav-list>
+            <h2 matLine>Welcome Admin</h2>
+            <h3 matLine>{{ sessionUserName }}</h3>
+            <mat-divider></mat-divider>
+            <h3 matSubheader>Menu</h3>
+            <mat-list-item routerLinkActive="active">
+                <a routerLink="dashboard">
+                    <mat-icon class="icon">dashboard</mat-icon>
+                    <span>Admin Dashboard</span>
+                </a>
+            </mat-list-item>
+            <mat-list-item routerLinkActive="active">
+                <a routerLink="users">
+                    <mat-icon class="icon">group</mat-icon>
+                    <span>Users</span>
+                </a>
+            </mat-list-item>
+            <mat-list-item routerLinkActive="active">
+                <a routerLink="category">
+                    <mat-icon class="icon">category</mat-icon>
+                    <span>Category</span>
+                </a>
+            </mat-list-item>
+            <mat-list-item routerLinkActive="active">
+                <a routerLink="product">
+                    <mat-icon class="icon">store</mat-icon>
+                    <span>Product</span>
+                </a>
+            </mat-list-item>
+            <mat-list-item routerLinkActive="active">
+                <a routerLink="order">
+                    <mat-icon class="icon">assignment</mat-icon>
+                    <span>Order</span>
+                </a>
+            </mat-list-item>
+            <mat-list-item routerLinkActive="active">
+                <a routerLink="account">
+                    <mat-icon class="icon">account_circle</mat-icon>
+                    <span>Account</span>
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <a (click)="logout()">
+                    <mat-icon class="icon">exit_to_app</mat-icon>
+                    <span>Logout</span>
+                </a>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar class="mat-elevation-z10">
+            <button mat-icon-button type="button" (click)="sideNav.toggle()">
+                <mat-icon class="icon">menu</mat-icon>
+            </button>
+            <span class="spacer"></span>
+            <span>E-Shop</span>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+        <app-admin-footer></app-admin-footer>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Edit</h1>
+<mat-dialog-content>
+    <form [formGroup]="editForm" (submit)="onSubmit()">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Total</mat-label>
+                <input type="number" min="1" matInput autocomplete="off" formControlName="total" required>
+                <mat-hint *ngIf="editForm.controls.total.touched && !editForm.controls.total.valid">
+                    Please insert valid total.
+                </mat-hint>
+            </mat-form-field>
+        </p>
+        <p>
+            <button type="button" mat-raised-button mat-dialog-close color="warn">Close</button>
+            <button type="submit" mat-raised-button color="accent" [disabled]="!editForm.valid">Save</button>
+        </p>
+    </form>
+</mat-dialog-content>
+<!-- <mat-dialog-actions> -->
+    <!-- <button type="button" mat-raised-button mat-dialog-close color="warn">Close</button> -->
+    <!-- <button class="mat-raised-button mat-accent" (click)="save()">Save</button> -->
+<!-- </mat-dialog-actions> -->

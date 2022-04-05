@@ -1,0 +1,62 @@
+<h1 mat-dialog-title>Edit</h1>
+<mat-dialog-content>
+    <form [formGroup]="editForm" (submit)="onSubmit()">
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input type="text" matInput autocomplete="off" formControlName="name" required>
+                        <mat-hint *ngIf="editForm.controls.name.touched && !editForm.controls.name.valid">
+                            Please insert valid name.
+                        </mat-hint>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Category</mat-label>
+                        <mat-select formControlName="categoryId" required>
+                          <mat-option *ngFor="let category of categories" [value]="category.id">
+                            {{category.title}}
+                          </mat-option>
+                        </mat-select>
+                        <mat-hint *ngIf="editForm.controls.categoryId.touched && !editForm.controls.categoryId.valid">
+                            Please select a category.
+                        </mat-hint>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Price</mat-label>
+                        <input type="number" min="1" matInput autocomplete="off" formControlName="price" required>
+                        <mat-hint *ngIf="editForm.controls.price.touched && !editForm.controls.price.valid">
+                            Please insert valid price.
+                        </mat-hint>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Description</mat-label>
+                        <textarea matInput formControlName="description"></textarea>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <input type="file" id="imageInput" #imageInput formControlName="imageFile" (change)="imageChange($event)">
+                    <button type="button" mat-raised-button color="accent" (click)="imageInput.click()">Choose image</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" mat-raised-button mat-dialog-close color="warn">Close</button>
+                    <button type="submit" mat-raised-button color="accent" [disabled]="!editForm.valid">Save</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</mat-dialog-content>
+<!-- <mat-dialog-actions> -->
+    <!-- <button type="button" mat-raised-button mat-dialog-close color="warn">Close</button> -->
+    <!-- <button class="mat-raised-button mat-accent" (click)="save()">Save</button> -->
+<!-- </mat-dialog-actions> -->

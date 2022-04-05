@@ -1,0 +1,54 @@
+<form [formGroup]="productForm" (submit)="onSubmit()">
+    <table>
+        <tr>
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input type="text" matInput autocomplete="off" formControlName="name" required>
+                    <mat-hint *ngIf="productForm.controls.name.touched && !productForm.controls.name.valid">
+                        Please insert valid name.
+                    </mat-hint>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>Category</mat-label>
+                    <mat-select formControlName="categoryId" required>
+                      <mat-option *ngFor="let category of categories" [value]="category.id">
+                        {{category.title}}
+                      </mat-option>
+                    </mat-select>
+                    <mat-hint *ngIf="productForm.controls.categoryId.touched && !productForm.controls.categoryId.valid">
+                        Please select a category.
+                    </mat-hint>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>Price</mat-label>
+                    <input type="number" min="1" matInput autocomplete="off" formControlName="price" required>
+                    <mat-hint *ngIf="productForm.controls.price.touched && !productForm.controls.price.valid">
+                        Please insert valid price.
+                    </mat-hint>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <mat-form-field appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput formControlName="description"></textarea>
+                </mat-form-field>
+            </td>
+            <td>
+                <input type="file" id="imageInput" #imageInput formControlName="imageFile" (change)="imageChange($event)">
+                <button type="button" mat-raised-button color="accent" (click)="imageInput.click()">Choose image</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit" mat-raised-button color="accent" [disabled]="!productForm.valid">Submit</button>
+            </td>
+        </tr>
+    </table>
+</form>

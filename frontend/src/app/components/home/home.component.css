@@ -1,0 +1,18 @@
+
+#container {
+    background-image: url('http://localhost:8000/uploads/hublot-cat.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    padding: 25px;
+}
+#spacer {
+    height: 0vh;
+}
+
+#categories {
+    margin: 20px;
+}
+#categories mat-card {
+    width: 30%;
+    height: 50%;
+}

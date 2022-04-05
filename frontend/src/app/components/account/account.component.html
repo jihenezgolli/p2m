@@ -1,0 +1,72 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Account Details</mat-card-title>
+        <mat-card-subtitle>Edit.</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="accountForm" (submit)="onSubmit()">
+            <table>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Name</mat-label>
+                            <input type="text" matInput autocomplete="off" formControlName="name" required>
+                            <mat-hint *ngIf="accountForm.controls.name.touched && !accountForm.controls.name.valid">
+                                Please insert valid name.
+                            </mat-hint>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input type="email" matInput autocomplete="off" formControlName="email" required>
+                            <mat-hint *ngIf="accountForm.controls.email.touched && !accountForm.controls.email.valid">
+                                Please insert valid email.
+                            </mat-hint>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input type="password" matInput autocomplete="off" formControlName="password" required>
+                            <mat-hint *ngIf="accountForm.controls.password.touched && !accountForm.controls.password.valid">
+                                Please insert min 6 character.
+                            </mat-hint>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <mat-radio-group formControlName="userType" required>
+                            <label>Select:</label>
+                            <mat-radio-button value="user">User</mat-radio-button>
+                            <mat-radio-button value="admin">Admin</mat-radio-button>
+                        </mat-radio-group>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Contact</mat-label>
+                            <input type="tel" matInput autocomplete="off" formControlName="contact">
+                            <mat-hint *ngIf="!accountForm.controls.contact.valid">
+                                Pattern: 987-654-3210
+                            </mat-hint>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Address</mat-label>
+                            <textarea matInput formControlName="address"></textarea>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" mat-raised-button color="accent" [disabled]="!accountForm.valid">Change</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </mat-card-content>
+</mat-card>

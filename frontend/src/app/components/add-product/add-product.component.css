@@ -1,0 +1,17 @@
+#imageInput{
+    display: none;
+}
+mat-form-field{
+    width: 100%;
+}
+form{
+    width: 750px;
+    margin: 25px auto 25px auto;
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+td{
+    padding: 5px;
+}

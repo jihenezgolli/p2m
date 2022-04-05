@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            <h1>Orders</h1>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-tab-group>
+        <mat-tab>
+            <ng-template mat-tab-label>List</ng-template>
+            <app-view-order></app-view-order>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>Detail</ng-template>
+            <app-view-order-detail></app-view-order-detail>
+        </mat-tab>
+    </mat-tab-group>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,27 @@
+.nav-spacer {
+    height: 8vh;
+}
+mat-card{
+    width: 750px;
+    margin: 25px auto;
+}
+mat-card-title{
+    color: #3f51b5;
+}
+mat-card-header{
+    justify-content: center;
+    text-align: center;
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+mat-form-field{
+    width: 100%;
+}
+mat-radio-button{
+    margin: 0 12px;
+}
+p{
+    text-align: center;
+}

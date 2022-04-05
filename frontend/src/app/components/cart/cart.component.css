@@ -1,0 +1,21 @@
+.nav-spacer {
+    height: 8vh;
+}
+
+mat-card {
+    margin: 25px;
+}
+
+table {
+    width: 100%;
+    margin: 10px;
+}
+  
+tr.mat-footer-row {
+    font-weight: bold;
+}
+
+::ng-deep #cartPageInputQuantity .mat-form-field-wrapper{
+    padding-bottom: 5px !important;
+    padding-top: 5px !important;
+}

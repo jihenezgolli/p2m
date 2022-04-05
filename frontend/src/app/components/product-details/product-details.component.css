@@ -1,0 +1,10 @@
+.nav-spacer {
+    height: 8vh;
+}
+mat-card{
+    margin: 25px auto;
+    width: 300px;
+}
+.mat-card-image{
+    height: 300px;
+}
