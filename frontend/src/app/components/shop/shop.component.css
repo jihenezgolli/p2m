@@ -1,13 +1,17 @@
 .nav-spacer {
     height: 8vh;
 }
-.container{
+
+.container {
     margin: 25px;
+    height: 470px;
 }
-.mat-card-image{
-    height: 250px;
+
+.mat-card-image {
+    height: 400px;
 }
-.mat-elevation-z8{
+
+.mat-elevation-z3 {
     width: 250px;
-    min-height: 400px;
+    height: 350px;
 }

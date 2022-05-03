@@ -1,27 +1,34 @@
 .nav-spacer {
     height: 8vh;
 }
-mat-card{
-    width: 750px;
+
+mat-card {
+    width: 60%;
     margin: 25px auto;
 }
-mat-card-title{
+
+mat-card-title {
     color: #3f51b5;
 }
-mat-card-header{
+
+mat-card-header {
     justify-content: center;
     text-align: center;
 }
-#accountDetails{
+
+#accountDetails {
     margin-left: auto;
     margin-right: auto;
 }
-mat-form-field{
+
+mat-form-field {
     width: 100%;
 }
-mat-radio-button{
+
+mat-radio-button {
     margin: 0 12px;
 }
-.mat-table{
+
+.mat-table {
     width: 100%;
 }

@@ -9,6 +9,10 @@ mat-toolbar {
     flex: 1 1 auto;
 }
 
-.mat-icon-button{
+.mat-icon-button {
     margin: 0 5px;
+}
+
+.heightFix {
+    min-height: 90%;
 }

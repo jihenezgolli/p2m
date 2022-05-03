@@ -6,7 +6,7 @@
                 <mat-label>Title</mat-label>
                 <input type="text" matInput autocomplete="off" formControlName="title" required>
                 <mat-hint *ngIf="editForm.controls.title.touched && !editForm.controls.title.valid">
-                    Please insert valid title.
+                    Please insert valid title
                 </mat-hint>
             </mat-form-field>
         </p>
@@ -15,7 +15,7 @@
                 <mat-label>Description</mat-label>
                 <textarea matInput formControlName="description" required></textarea>
                 <mat-hint *ngIf="editForm.controls.description.touched && !editForm.controls.description.valid">
-                    Please insert description.
+                    Please insert description
                 </mat-hint>
             </mat-form-field>
         </p>
@@ -26,6 +26,6 @@
     </form>
 </mat-dialog-content>
 <!-- <mat-dialog-actions> -->
-    <!-- <button type="button" mat-raised-button mat-dialog-close color="warn">Close</button> -->
-    <!-- <button class="mat-raised-button mat-accent" (click)="save()">Save</button> -->
+<!-- <button type="button" mat-raised-button mat-dialog-close color="warn">Close</button> -->
+<!-- <button class="mat-raised-button mat-accent" (click)="save()">Save</button> -->
 <!-- </mat-dialog-actions> -->

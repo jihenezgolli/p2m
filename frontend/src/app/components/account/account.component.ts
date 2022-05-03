@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators , ReactiveFormsModule} from '@angular/forms';
 import { UsersService } from 'src/app/services/users.service';
 import { Users } from 'src/app/models/users.model';
 import { Subscription } from 'rxjs';
@@ -19,6 +19,14 @@ export class AccountComponent implements OnInit, OnDestroy {
   constructor(private formBuilder: FormBuilder, private usersServ: UsersService) { }
 
   ngOnInit() {
+
+    this.user.id=99999;
+    this.user.name="";
+    this.user.email="";
+    this.user.password="";
+    this.user.userType="";
+    this.user.address="";
+
     this.subscription = this.usersServ.accountChanged.subscribe(
       (user: Users) => {
         this.user = user;

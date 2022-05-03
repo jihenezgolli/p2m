@@ -1,7 +1,7 @@
 <mat-sidenav-container>
     <mat-sidenav mode="side" #sideNav>
         <mat-nav-list>
-            <h2 matLine>Welcome Admin</h2>
+            <h2 matLine>Welcome</h2>
             <h3 matLine>{{ sessionUserName }}</h3>
             <mat-divider></mat-divider>
             <h3 matSubheader>Menu</h3>
@@ -50,7 +50,7 @@
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <mat-toolbar class="mat-elevation-z10">
+        <mat-toolbar class="mat-elevation-z2">
             <button mat-icon-button type="button" (click)="sideNav.toggle()">
                 <mat-icon class="icon">menu</mat-icon>
             </button>

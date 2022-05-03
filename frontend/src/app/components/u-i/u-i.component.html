@@ -1,4 +1,4 @@
-<mat-toolbar  class="mat-elevation-z10">
+<mat-toolbar class="mat-elevation-z2">
     <span>E-shop</span>
     <span class="spacer"></span>
     <a mat-icon-button routerLink="home">
@@ -33,5 +33,7 @@
         </button>
     </mat-menu>
 </mat-toolbar>
-<router-outlet></router-outlet>
+<div class="heightFix">
+    <router-outlet></router-outlet>
+</div>
 <app-admin-footer></app-admin-footer>

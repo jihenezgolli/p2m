@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 //});
 Route::resource('user', 'App\Http\Controllers\UserController');
 Route::post('login', 'App\Http\Controllers\UserController@login');
-Route::post('register', 'App\Http\Controllers\UserController@register');
+Route::post('register', [App\Http\Controllers\UserController::class,"register"]);
 Route::resource('category', 'App\Http\Controllers\CategoryController');
 Route::resource('product', 'App\Http\Controllers\ProductController');
 Route::resource('order', 'App\Http\Controllers\OrderController');
