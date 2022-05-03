@@ -17,7 +17,7 @@ class UserTest extends TestCase
      */
     public function test_example()
     {
-        $user= new User(['name'=>'jihene','email'=>'jihene@gmail.com','password'=>'123456']);
+        $user= new User(['name'=>'jihene','email'=>'jihene@gmail.com','password'=>'123456','userType'=>'user']);
         $this->assertEquals('jihene',$user->name);
         $this->assertEquals('jihene@gmail.com',$user->email);
         $this->assertEquals('123456',$user->password);
@@ -29,9 +29,9 @@ class UserTest extends TestCase
         ->assertStatus(200);
         }
     public function test_register_user(){
-        $user=['name'=>'jihene','email'=>'jihene@gmail.com','password'=>'123456',];
+        $user=['name'=>'jihene','email'=>'jihene@gmail.com','password'=>'123456','userType'=>'user'];
         $response=$this->call ('POST', '/api/register', ['Accept'=>'application/json'])
-        ->assertStatus(200);
+        ->assertStatus(302);
 
         //$response->assertStatus($response->status(),200);
        // $this->assertTrue(true);
