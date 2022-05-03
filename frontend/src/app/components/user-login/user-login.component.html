@@ -1,40 +1,36 @@
-<div class="main-div">
-    <div class="first-div">
-
-        <form {formGroup}="loginForm" (submit)="onSubmit()">
-            <h1>Welcome Back</h1>
-            <p id="descr">Enter your email and password to sign in</p>
-            <label>Email</label>
-            <div class="spacer"></div>
-            <div class="input-margin">
-                <div><input type="email" id="label-style" formControlName="email" required></div>
-                <mat-hint *ngIf="loginForm.controls.email.touched && !loginForm.controls.email.valid">
-                    Please insert valid email
-                </mat-hint>
-            </div>
-            <div class="spacer"></div>
-            <label>Password</label>
-            <div class="spacer"></div>
-            <div class="input-margin">
-                <div><input id="label-style" autocomplete="off" matInput [type]="showPassword ? 'text' : 'password'" formControlName="password" required></div>
-                <mat-icon class="password-icon" (click)="togglePasswordVisibility()">{{showPassword?'visibility_off':'visibility'}}</mat-icon>
-                <mat-hint *ngIf="loginForm.controls.password.touched && !loginForm.controls.password.valid">
-                    Please insert valid password
-                </mat-hint>
-            </div>
-            <div class="spacer"></div>
-            <p class="shift-right">
-                <a class="forgot-password" href="#">Forgot your password ?</a>
+<div class="nav-spacer"></div>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>>E-Shop</mat-card-title>
+        <mat-card-subtitle>Login</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="loginForm" (submit)="onSubmit()">
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input type="email" autocomplete="off" matInput formControlName="email" required>
+                    <mat-hint *ngIf="loginForm.controls.email.touched && !loginForm.controls.email.valid">
+                        Please insert valid email.
+                    </mat-hint>
+                </mat-form-field>
             </p>
-            <div class="under-btn">
-                <button class="login-btn" type="submit" color="accent" [disabled]="!loginForm.valid">Login</button>
-                <br>
-                <p id="descr">Don't have an account? </p>
-                <a class="sign-up" routerLink="../userRegister">Sign up</a>
-            </div>
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input type="password" autocomplete="off" matInput formControlName="password" required>
+                    <mat-hint *ngIf="loginForm.controls.password.touched && !loginForm.controls.password.valid">
+                        Please insert valid password.
+                    </mat-hint>
+                </mat-form-field>
+            </p>
+            <p>
+                <button type="submit" mat-raised-button color="accent" [disabled]="!loginForm.valid">Submit</button>
+            </p>
         </form>
-    </div>
-    <div class="second-div ">
-        <img src="../assets/five.png " alt="">
-    </div>
-</div>
+        <p>
+            New user?
+            <a mat-button color="accent" routerLink="../userRegister">Register.</a>
+        </p>
+    </mat-card-content>
+</mat-card>

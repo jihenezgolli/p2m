@@ -1,80 +1,75 @@
-<mat-card>
-    <mat-card-header>
-        <mat-card-title>
-            <h2>Dashboard</h2>
-        </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <mat-grid-list cols="4" gutterSize="10px" rowHeight="1:1">
-            <mat-grid-tile>
-                <mat-card class="mat-elevation-z3">
-                    <mat-card-header>
-                        <mat-card-title>Users</mat-card-title>
-                    </mat-card-header>
-                    <mat-card-content>
-                        <p>Users count = {{users?.length}}</p>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <button mat-button color="accent" routerLink="../users">
-                            <mat-icon>visibility</mat-icon>
-                            View
-                        </button>
-                    </mat-card-actions>
-                </mat-card>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <mat-card class="mat-elevation-z3">
-                    <mat-card-header>
-                        <mat-card-title>Categories</mat-card-title>
-                    </mat-card-header>
-                    <mat-card-content>
-                        <p>Categories count = {{categories?.length}}</p>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <button mat-button color="accent" routerLink="../category">
-                            <mat-icon>visibility</mat-icon>
-                            View
-                        </button>
-                    </mat-card-actions>
-                </mat-card>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <mat-card class="mat-elevation-z3">
-                    <mat-card-header>
-                        <mat-card-title>Products</mat-card-title>
-                    </mat-card-header>
-                    <mat-card-content>
-                        <span>
-                            <p>Products count =</p>
-                        <p>{{products?.length}}</p>
-                        </span>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <button mat-button color=" accent " routerLink="../product ">
-                            <mat-icon>visibility</mat-icon>
-                            View
-                        </button>
-                    </mat-card-actions>
-                </mat-card>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <mat-card class="mat-elevation-z3 ">
-                    <mat-card-header>
-                        <mat-card-title>Orders</mat-card-title>
-                    </mat-card-header>
-                    <mat-card-content>
-                        <p>Orders count = {{orders?.length}}</p>
-                    </mat-card-content>
-                    <div class="view-spacer ">
-                    </div>
-                    <mat-card-actions>
-                        <button mat-button color="accent " routerLink="../order ">
-                            <mat-icon>visibility</mat-icon>
-                            View
-                        </button>
-                    </mat-card-actions>
-                </mat-card>
-            </mat-grid-tile>
-        </mat-grid-list>
-    </mat-card-content>
+<mat-card class="container">
+  <mat-card-header>
+      <mat-card-title>
+          <h1>Dashboard</h1>
+      </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+      <mat-grid-list cols="4" gutterSize="15px" rowHeight="1:1">
+          <mat-grid-tile>
+              <mat-card class="mat-elevation-z8">
+                  <mat-card-header>
+                      <mat-card-title>Users</mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>
+                      <p>Users count = {{users?.length}}.</p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                      <button mat-button color="accent" routerLink="../users">
+                          <mat-icon>visibility</mat-icon>
+                          View
+                      </button>
+                  </mat-card-actions>
+              </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+              <mat-card class="mat-elevation-z8">
+                  <mat-card-header>
+                      <mat-card-title>Categories</mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>
+                      <p>Categories count = {{categories?.length}}.</p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                      <button mat-button color="accent" routerLink="../category">
+                          <mat-icon>visibility</mat-icon>
+                          View
+                      </button>
+                  </mat-card-actions>
+              </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+              <mat-card class="mat-elevation-z8">
+                  <mat-card-header>
+                      <mat-card-title>Products</mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>
+                      <p>Products count = {{products?.length}}.</p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                      <button mat-button color="accent" routerLink="../product">
+                          <mat-icon>visibility</mat-icon>
+                          View
+                      </button>
+                  </mat-card-actions>
+              </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+              <mat-card class="mat-elevation-z8">
+                  <mat-card-header>
+                      <mat-card-title>Orders</mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>
+                      <p>Orders count = {{orders?.length}}.</p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                      <button mat-button color="accent" routerLink="../order">
+                          <mat-icon>visibility</mat-icon>
+                          View
+                      </button>
+                  </mat-card-actions>
+              </mat-card>
+          </mat-grid-tile>
+      </mat-grid-list>
+  </mat-card-content>
 </mat-card>

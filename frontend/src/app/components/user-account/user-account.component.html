@@ -2,7 +2,7 @@
 <mat-card>
     <mat-card-header>
         <mat-card-title>Account Details</mat-card-title>
-        <mat-card-subtitle>Edit</mat-card-subtitle>
+        <mat-card-subtitle>Edit.</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
         <form [formGroup]="accountForm" (submit)="onSubmit()">
@@ -22,7 +22,7 @@
                             <mat-label>Email</mat-label>
                             <input type="email" matInput autocomplete="off" formControlName="email" required>
                             <mat-hint *ngIf="accountForm.controls.email.touched && !accountForm.controls.email.valid">
-                                Please insert valid email
+                                Please insert valid email.
                             </mat-hint>
                         </mat-form-field>
                     </td>
@@ -31,7 +31,7 @@
                             <mat-label>Password</mat-label>
                             <input type="password" matInput autocomplete="off" formControlName="password" required>
                             <mat-hint *ngIf="accountForm.controls.password.touched && !accountForm.controls.password.valid">
-                                Please insert min 6 character
+                                Please insert min 6 character.
                             </mat-hint>
                         </mat-form-field>
                     </td>
@@ -49,7 +49,7 @@
                             <mat-label>Contact</mat-label>
                             <input type="tel" matInput autocomplete="off" formControlName="contact">
                             <mat-hint *ngIf="!accountForm.controls.contact.valid">
-                                Pattern: 99999999
+                                Pattern: 987-654-3210
                             </mat-hint>
                         </mat-form-field>
                     </td>
@@ -78,40 +78,40 @@
     </mat-card-header>
     <mat-card-content>
 
-        <h4 *ngIf="orders?.length == 0">No Data Found</h4>
-        <div class="container" [hidden]="orders?.length == 0">
+<h4 *ngIf="orders?.length == 0">No Data Found</h4>
+<div class="container" [hidden]="orders?.length == 0">
 
-            <mat-form-field>
-                <mat-label>Filter</mat-label>
-                <input matInput (keyup)="applyOrdersFilter($event)" autocomplete="off" placeholder="Search">
-            </mat-form-field>
+    <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyOrdersFilter($event)" autocomplete="off" placeholder="Search">
+    </mat-form-field>
+      
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="ordersDataSource" matSort>
 
-            <div class="mat-elevation-z8">
-                <table mat-table [dataSource]="ordersDataSource" matSort>
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+            <td mat-cell *matCellDef="let row"> {{row?.id}} </td>
+          </ng-container>
 
-                    <ng-container matColumnDef="id">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
-                        <td mat-cell *matCellDef="let row"> {{row?.id}} </td>
-                    </ng-container>
+          <ng-container matColumnDef="total">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Total </th>
+            <td mat-cell *matCellDef="let row"> {{row?.total}} </td>
+          </ng-container>
 
-                    <ng-container matColumnDef="total">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Total </th>
-                        <td mat-cell *matCellDef="let row"> {{row?.total}} </td>
-                    </ng-container>
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+            <td mat-cell *matCellDef="let row"> {{row?.created_at | date: 'short'}} </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedOrdersColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedOrdersColumns;"></tr>
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
 
-                    <ng-container matColumnDef="date">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
-                        <td mat-cell *matCellDef="let row"> {{row?.created_at | date: 'short'}} </td>
-                    </ng-container>
-
-                    <tr mat-header-row *matHeaderRowDef="displayedOrdersColumns"></tr>
-                    <tr mat-row *matRowDef="let row; columns: displayedOrdersColumns;"></tr>
-                </table>
-
-                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-            </div>
-
-        </div>
+</div>
 
     </mat-card-content>
 </mat-card>
@@ -122,45 +122,45 @@
     </mat-card-header>
     <mat-card-content>
 
-        <h4 *ngIf="orderDetails?.length == 0">No Data Found</h4>
-        <div class="container" [hidden]="orderDetails?.length == 0">
+<h4 *ngIf="orderDetails?.length == 0">No Data Found</h4>
+<div class="container" [hidden]="orderDetails?.length == 0">
 
-            <mat-form-field>
-                <mat-label>Filter</mat-label>
-                <input matInput (keyup)="applyOrderDetailsFilter($event)" autocomplete="off" placeholder="Search">
-            </mat-form-field>
+    <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyOrderDetailsFilter($event)" autocomplete="off" placeholder="Search">
+    </mat-form-field>
+      
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="orderDetailsDataSource" matSort>
 
-            <div class="mat-elevation-z8">
-                <table mat-table [dataSource]="orderDetailsDataSource" matSort>
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+            <td mat-cell *matCellDef="let row"> {{row?.id}} </td>
+          </ng-container>
 
-                    <ng-container matColumnDef="id">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
-                        <td mat-cell *matCellDef="let row"> {{row?.id}} </td>
-                    </ng-container>
+          <ng-container matColumnDef="orderId">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Id </th>
+            <td mat-cell *matCellDef="let row"> {{row?.orderId}} </td>
+          </ng-container>
 
-                    <ng-container matColumnDef="orderId">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Id </th>
-                        <td mat-cell *matCellDef="let row"> {{row?.orderId}} </td>
-                    </ng-container>
+          <ng-container matColumnDef="productName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Product Name </th>
+            <td mat-cell *matCellDef="let row"> {{row?.product.name}} </td>
+          </ng-container>
 
-                    <ng-container matColumnDef="productName">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Product Name </th>
-                        <td mat-cell *matCellDef="let row"> {{row?.product.name}} </td>
-                    </ng-container>
+          <ng-container matColumnDef="quantity">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </th>
+            <td mat-cell *matCellDef="let row"> {{row?.quantity}} </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedOrderDetailsColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedOrderDetailsColumns;"></tr>
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
 
-                    <ng-container matColumnDef="quantity">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </th>
-                        <td mat-cell *matCellDef="let row"> {{row?.quantity}} </td>
-                    </ng-container>
-
-                    <tr mat-header-row *matHeaderRowDef="displayedOrderDetailsColumns"></tr>
-                    <tr mat-row *matRowDef="let row; columns: displayedOrderDetailsColumns;"></tr>
-                </table>
-
-                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-            </div>
-
-        </div>
+</div>
 
     </mat-card-content>
 </mat-card>

@@ -17,11 +17,6 @@ export class UserLoginComponent implements OnInit {
     this.initForm();
   }
 
-  public showPassword: boolean = false;
-  public togglePasswordVisibility(): void {
-    this.showPassword = !this.showPassword;
-  }
-
   private initForm(){
     this.loginForm = this.formBuilder.group({
       'email': [null, [Validators.required, Validators.email]],
