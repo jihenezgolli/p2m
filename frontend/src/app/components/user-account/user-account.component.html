@@ -2,7 +2,7 @@
 <mat-card>
     <mat-card-header>
         <mat-card-title>Account Details</mat-card-title>
-        <mat-card-subtitle>Edit</mat-card-subtitle>
+        <mat-card-subtitle>Edit.</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
         <form {formGroup}="accountForm" (submit)="onSubmit()">
@@ -22,7 +22,7 @@
                             <mat-label>Email</mat-label>
                             <input type="email" matInput autocomplete="off" formControlName="email" required>
                             <mat-hint *ngIf="accountForm.controls.email.touched && !accountForm.controls.email.valid">
-                                Please insert valid email
+                                Please insert valid email.
                             </mat-hint>
                         </mat-form-field>
                     </td>
@@ -31,7 +31,7 @@
                             <mat-label>Password</mat-label>
                             <input type="password" matInput autocomplete="off" formControlName="password" required>
                             <mat-hint *ngIf="accountForm.controls.password.touched && !accountForm.controls.password.valid">
-                                Please insert min 6 character
+                                Please insert min 6 character.
                             </mat-hint>
                         </mat-form-field>
                     </td>
@@ -49,7 +49,7 @@
                             <mat-label>Contact</mat-label>
                             <input type="tel" matInput autocomplete="off" formControlName="contact">
                             <mat-hint *ngIf="!accountForm.controls.contact.valid">
-                                Pattern: 99999999
+                                Pattern: 987-654-3210
                             </mat-hint>
                         </mat-form-field>
                     </td>
@@ -87,7 +87,7 @@
             </mat-form-field>
 
             <div class="mat-elevation-z8">
-                <table mat-table {dataSource}="ordersDataSource" matSort>
+                <table mat-table [dataSource]="ordersDataSource" matSort>
 
                     <ng-container matColumnDef="id">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
@@ -131,7 +131,7 @@
             </mat-form-field>
 
             <div class="mat-elevation-z8">
-                <table mat-table {dataSource}="orderDetailsDataSource" matSort>
+                <table mat-table [dataSource]="orderDetailsDataSource" matSort>
 
                     <ng-container matColumnDef="id">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>

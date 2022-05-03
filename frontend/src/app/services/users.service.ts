@@ -45,11 +45,11 @@ export class UsersService {
   login(data){
     this.http.post('http://localhost:8000/api/login', data).subscribe(
       res => {
-        if(res['user'] == 0) {
-          this.snackBar.open('Email is incorrect', 'Dismiss', {duration: 3000});
-        } else if (res['user'] == 1) {
-          this.snackBar.open('Password is incorrect', 'Dismiss', {duration: 3000});
-        } else {
+        //if(res['user'] == 0) {
+          //this.snackBar.open('Email is incorrect', 'Dismiss', {duration: 3000});
+        //} else if (res['user'] == 1) {
+          //this.snackBar.open('Password is incorrect', 'Dismiss', {duration: 3000});
+        //} else {
           this.account = res['user'];
           this.accountChanged.next(this.account);
           sessionStorage.setItem("sessionUserData", JSON.stringify(res['user']));
@@ -60,7 +60,7 @@ export class UsersService {
           }
           this.snackBar.open('Login successful', 'Dismiss', {duration: 3000});
         }
-      }
+      //}
     );
   }
 
