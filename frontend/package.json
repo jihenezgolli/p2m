@@ -21,8 +21,14 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+<<<<<<< HEAD
     "angular-material": "^1.2.5",
+=======
+    "bootstrap": "^5.1.3",
+>>>>>>> 0684daeb718d259c70ab248e23cac18e958dc29f
     "hammerjs": "^2.0.8",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
