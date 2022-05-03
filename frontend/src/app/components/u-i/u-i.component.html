@@ -4,7 +4,7 @@
     <a mat-icon-button routerLink="home">
         <mat-icon>home</mat-icon>
     </a>
-    <button mat-icon-button [matMenuTriggerFor]="shopMenu" [matMenuTriggerData]="categories">
+    <button mat-icon-button {matMenuTriggerFor}="shopMenu" {matMenuTriggerData}="categories">
         <mat-icon>store</mat-icon>
     </button>
     <mat-menu #shopMenu="matMenu" xPosition="before">
@@ -15,7 +15,7 @@
     <a mat-icon-button routerLink="cart">
         <mat-icon matBadge="{{items?.length}}" matBadgeColor="accent">shopping_cart</mat-icon>
     </a>
-    <button mat-icon-button [matMenuTriggerFor]="menu">
+    <button mat-icon-button {matMenuTriggerFor}="menu">
         <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu" xPosition="before">

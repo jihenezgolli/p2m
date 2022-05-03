@@ -49,7 +49,7 @@ export class AccountComponent implements OnInit, OnDestroy {
       'email': [null, [Validators.required, Validators.email]],
       'password': [null, [Validators.required, Validators.minLength(6)]],
       'userType': [null, Validators.required],
-      'contact': [null, Validators.pattern(/^\d{3}-\d{3}-\d{4}$/)],
+      'contact': [null, Validators.pattern(/^\d{8}$/)],
       'address': [null]
     });
   }

@@ -8,7 +8,7 @@
         <mat-vertical-stepper *ngIf="products; else noDataFound">
             <mat-step>
                 <ng-template matStepLabel>Your cart items</ng-template>
-                <table mat-table [dataSource]="products" class="mat-elevation-z8">
+                <table mat-table {dataSource}="products" class="mat-elevation-z8">
 
                     <ng-container matColumnDef="name">
                         <th mat-header-cell *matHeaderCellDef> Name </th>

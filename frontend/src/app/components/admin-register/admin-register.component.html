@@ -4,7 +4,7 @@
         <mat-card-subtitle>Registration</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-        <form [formGroup]="registrationForm" (submit)="onSubmit()">
+        <form {formGroup}="registrationForm" (submit)="onSubmit()">
 
             <mat-form-field appearance="outline">
                 <mat-label>Name</mat-label>
@@ -51,7 +51,7 @@
         </form>
         <p>
             Already a user?
-            <a mat-button color="accent" routerLink="/adminLogin">Login</a>
+            <a mat-button color="accent" routerLink="../adminLogin">Login</a>
         </p>
     </mat-card-content>
 </mat-card>

@@ -4,7 +4,7 @@
         <mat-card-subtitle>Edit</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-        <form [formGroup]="accountForm" (submit)="onSubmit()">
+        <form {formGroup}="accountForm" (submit)="onSubmit()">
             <table>
                 <tr>
                     <td>
@@ -48,7 +48,7 @@
                             <mat-label>Contact</mat-label>
                             <input type="tel" matInput autocomplete="off" formControlName="contact">
                             <mat-hint *ngIf="!accountForm.controls.contact.valid">
-                                Pattern: XX XXX XXX
+                                Pattern: XXXXXXXX
                             </mat-hint>
                         </mat-form-field>
                     </td>
@@ -63,7 +63,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <button type="submit" mat-raised-button  [disabled]="!accountForm.valid">Change</button>
+                        <button type="submit" mat-raised-button [disabled]="!accountForm.valid">Change</button>
                     </td>
                 </tr>
             </table>

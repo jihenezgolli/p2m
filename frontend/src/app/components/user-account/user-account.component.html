@@ -5,7 +5,7 @@
         <mat-card-subtitle>Edit</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-        <form [formGroup]="accountForm" (submit)="onSubmit()">
+        <form {formGroup}="accountForm" (submit)="onSubmit()">
             <table id="accountDetails">
                 <tr>
                     <td>
@@ -87,7 +87,7 @@
             </mat-form-field>
 
             <div class="mat-elevation-z8">
-                <table mat-table [dataSource]="ordersDataSource" matSort>
+                <table mat-table {dataSource}="ordersDataSource" matSort>
 
                     <ng-container matColumnDef="id">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
@@ -131,7 +131,7 @@
             </mat-form-field>
 
             <div class="mat-elevation-z8">
-                <table mat-table [dataSource]="orderDetailsDataSource" matSort>
+                <table mat-table {dataSource}="orderDetailsDataSource" matSort>
 
                     <ng-container matColumnDef="id">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
