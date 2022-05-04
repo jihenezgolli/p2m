@@ -12,3 +12,6 @@ mat-toolbar {
 .mat-icon-button{
     margin: 0 5px;
 }
+.mat-tool-bar{
+  color: red;
+}

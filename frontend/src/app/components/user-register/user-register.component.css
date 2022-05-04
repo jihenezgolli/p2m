@@ -1,27 +1,111 @@
-.nav-spacer {
-    height: 8vh;
+#label-style {
+  border-radius: 25px;
+  border: 2px solid gray;
+  width: 100%;
+  height: 30px;
+  padding: 5px 15px;
 }
-mat-card{
-    width: 750px;
-    margin: 25px auto;
+
+mat-hint {
+  color: red;
 }
-mat-card-title{
-    color: #3f51b5;
+
+h1 {
+  color: red;
 }
-mat-card-header{
-    justify-content: center;
-    text-align: center;
+
+.spacer {
+  height: 10px;
 }
-table{
-    margin-left: auto;
-    margin-right: auto;
+
+.shift-right {
+  text-align: end;
 }
-mat-form-field{
-    width: 100%;
+
+.input-margin {
+  margin-left: 7px;
 }
-mat-radio-button{
-    margin: 0 12px;
+
+.login-btn {
+  width: 70%;
+  height: 40px;
+  background-color: red;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  font-size: medium;
+  cursor: pointer;
+  margin: 10% 0%;
 }
-p{
-    text-align: center;
+
+.login-btn:hover {
+  background-color: #FAFAFA;
+  color: red;
+  font-size: large;
+  border: 2px solid red;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+#descr {
+  color: #808080;
+  margin-bottom: 10%;
+}
+
+.first-div {
+  width: 420px;
+  padding: 100px 75px 0px 250px;
+}
+
+.under-btn p {
+  display: inline;
+}
+
+.under-btn {
+  text-align: center;
+}
+
+.sign-up {
+  color: red;
+  text-decoration: none;
+}
+
+.sign-up:hover {
+  color: red;
+  text-decoration: underline red;
+  transition: all 0.3s ease-in-out;
+  ;
+}
+
+.main-div {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto
+}
+
+.input-margin div,
+.input-margin #label-style {
+  display: -webkit-inline-box;
+  width: auto;
+}
+
+.password-icon {
+  vertical-align: middle;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.main-div {
+  overflow: hidden;
+}
+
+.div-flex {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
 }

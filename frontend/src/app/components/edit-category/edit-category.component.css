@@ -1,5 +1,6 @@
 .mat-raised-button{
     margin: 0 10px;
+    color: red;
 }
 mat-form-field{
     width: 100%;

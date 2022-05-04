@@ -26,7 +26,7 @@ export class UsersService {
     this.http.post('http://localhost:8000/api/register', data).subscribe(
       res => {
         if(res['user'] == null){
-          this.snackBar.open('Email already exists.', 'Dismiss', {duration: 3000});
+         this.snackBar.open('Email already exists.', 'Dismiss', {duration: 3000});
         } else if(res['user'].userType == 'user') {
           this.users.push(res['user']);
           this.usersChanged.next(this.users);
@@ -45,9 +45,10 @@ export class UsersService {
   login(data){
     this.http.post('http://localhost:8000/api/login', data).subscribe(
       res => {
-        if(res['user'] == 0) {
-          this.snackBar.open('Email is incorrect.', 'Dismiss', {duration: 3000});
-        } else if (res['user'] == 1) {
+        //if(res['user'] == 0) {
+          //this.snackBar.open('Email is incorrect.', 'Dismiss', {duration: 3000});
+        //} else
+        if (res['user'] == 1) {
           this.snackBar.open('Password is incorrect.', 'Dismiss', {duration: 3000});
         } else {
           this.account = res['user'];

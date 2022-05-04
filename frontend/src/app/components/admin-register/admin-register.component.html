@@ -1,76 +1,73 @@
-<mat-card>
-    <mat-card-header>
-        <mat-card-title>>E-Shop</mat-card-title>
-        <mat-card-subtitle>Registration.</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-        <form [formGroup]="registrationForm" (submit)="onSubmit()">
-            <table>
-                <tr>
-                    <td>
-                        <mat-form-field appearance="outline">
-                            <mat-label>Name</mat-label>
-                            <input type="text" matInput autocomplete="off" formControlName="name" required>
-                            <mat-hint *ngIf="registrationForm.controls.name.touched && !registrationForm.controls.name.valid">
-                                Please insert valid name.
-                            </mat-hint>
-                        </mat-form-field>
-                    </td>
-                    <td>
-                        <mat-form-field appearance="outline">
-                            <mat-label>Email</mat-label>
-                            <input type="email" matInput autocomplete="off" formControlName="email" required>
-                            <mat-hint *ngIf="registrationForm.controls.email.touched && !registrationForm.controls.email.valid">
-                                Please insert valid email.
-                            </mat-hint>
-                        </mat-form-field>
-                    </td>
-                    <td>
-                        <mat-form-field appearance="outline">
-                            <mat-label>Password</mat-label>
-                            <input type="password" matInput autocomplete="off" formControlName="password" required>
-                            <mat-hint *ngIf="registrationForm.controls.password.touched && !registrationForm.controls.password.valid">
-                                Please insert min 6 character.
-                            </mat-hint>
-                        </mat-form-field>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <mat-radio-group formControlName="userType" required>
-                            <label>Select:</label>
-                            <mat-radio-button value="user">User</mat-radio-button>
-                            <mat-radio-button value="admin">Admin</mat-radio-button>
-                        </mat-radio-group>
-                    </td>
-                    <td>
-                        <mat-form-field appearance="outline">
-                            <mat-label>Contact</mat-label>
-                            <input type="tel" matInput autocomplete="off" formControlName="contact">
-                            <mat-hint *ngIf="!registrationForm.controls.contact.valid">
-                                Pattern: 987-654-3210
-                            </mat-hint>
-                        </mat-form-field>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3">
-                        <mat-form-field appearance="outline">
-                            <mat-label>Address</mat-label>
-                            <textarea matInput formControlName="address"></textarea>
-                        </mat-form-field>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button type="submit" mat-raised-button color="accent" [disabled]="!registrationForm.valid">Submit</button>
-                    </td>
-                </tr>
-            </table>
-        </form>
-        <p>
-            Already a user?
-            <a mat-button color="accent" routerLink="/adminLogin">Login.</a>
-        </p>
-    </mat-card-content>
-</mat-card>
+<div class="main-div">
+  <div class="first-div">
+      <form [formGroup]="registrationForm" (submit)="onSubmit()">
+          <h1>Welcome Back</h1>
+          <p id="descr">Create a new account ? Let's start</p>
+          <div class="div-flex">
+              <div>
+                  <div class="spacer"></div>
+                  <label>Name</label>
+                  <div class="spacer"></div>
+                  <div class="input-margin">
+                      <div><input type="text" id="label-style" formControlName="name" required></div>
+                      <mat-hint *ngIf="registrationForm.controls.name.touched && !registrationForm.controls.name.valid">
+                          Please insert valid name
+                      </mat-hint>
+                  </div>
+              </div>
+              <div>
+                  <div class="spacer"></div>
+                  <label>Email</label>
+                  <div class="spacer"></div>
+                  <div class="input-margin">
+                      <div><input type="email" id="label-style" formControlName="email" required></div>
+                      <mat-hint *ngIf="registrationForm.controls.email.touched && !registrationForm.controls.email.valid">
+                          Please insert valid email
+                      </mat-hint>
+                  </div>
+              </div>
+              <div>
+                  <div class="spacer"></div>
+                  <label>Password</label>
+                  <div class="spacer"></div>
+                  <div class="input-margin">
+                      <div><input id="label-style" matInput autocomplete="off" type="password" formControlName="password" required></div>
+                      <mat-hint *ngIf="registrationForm.controls.password.touched && !registrationForm.controls.password.valid">
+                          Please insert min 6 character
+                      </mat-hint>
+                  </div>
+              </div>
+              <div>
+                  <div class="spacer"></div>
+                  <label>Contact</label>
+                  <div class="spacer"></div>
+                  <div class="input-margin">
+                      <div><input type="tel" id="label-style" formControlName="contact"></div>
+                      <mat-hint *ngIf="!registrationForm.controls.contact.valid">
+                          Pattern: 99999999
+                      </mat-hint>
+                  </div>
+              </div>
+
+
+              <div>
+                  <div class="spacer"></div>
+                  <label>Address</label>
+                  <div class="spacer"></div>
+                  <div class="input-margin">
+                      <div><input type="text" id="label-style" formControlName="address"></div>
+                  </div>
+              </div>
+          </div>
+          <div class="under-btn">
+              <button type="submit" color="accent" class="login-btn" [disabled]="!registrationForm.valid" routerLink="/adminLogin">Register</button>
+              <br>
+              <p id="descr">Do you have an account? </p>
+              <a class="sign-up" routerLink="/adminLogin">Sign in</a>
+          </div>
+      </form>
+  </div>
+  <div class="second-div ">
+      <img src="../assets/five.png " alt=" ">
+  </div>
+</div>

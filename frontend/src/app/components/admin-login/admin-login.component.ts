@@ -23,6 +23,11 @@ export class AdminLoginComponent implements OnInit {
       'password': [null, [Validators.required, Validators.minLength(6)]]
     });
   }
+  public showPassword: boolean = false;
+  public togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
+
 
   onSubmit(){
     this.usersServ.login(this.loginForm.value);

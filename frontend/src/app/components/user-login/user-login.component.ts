@@ -11,10 +11,15 @@ export class UserLoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private usersServ: UsersService) { }
+  constructor(private formBuilder: FormBuilder,) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.initForm();
+  }
+
+  public showPassword: boolean = false;
+  public togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
   }
 
   private initForm(){
@@ -23,10 +28,11 @@ export class UserLoginComponent implements OnInit {
       'password': [null, [Validators.required, Validators.minLength(6)]]
     });
   }
+   login (){
 
-  onSubmit(){
-    this.usersServ.login(this.loginForm.value);
-    this.loginForm.reset();
   }
 
-}
+  onSubmit(){
+
+
+ } }

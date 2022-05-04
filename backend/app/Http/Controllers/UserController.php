@@ -96,28 +96,39 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
-        $user = User::where('email', $request->input('email'))->first();
-        if($user){
-            if($request->input('password') == $user->password){
-                return response()->json(['user' => $user]);
-            } else {
-                return response()->json(['user' => 1]);
-            }
+        $loginData = $request->validate([
+            'email' => 'email|required',
+            'password' => 'required'
+        ]);
+        if(auth()->attempt($loginData)) {
+                return response()->json(['user' => auth()->user()]);
+
+
         } else {
             return response()->json(['user' => 0]);
         }
+
     }
+
     public function register(Request $request)
     {
-        $user = User::where('email', $request->input('email'))->first();
-        if($user){
-            if($request->input('password') == $user->password){
-                return response()->json(['user' => $user]);
-            } else {
-                return response()->json(['user' => 1]);
-            }
-        } else {
-            return response()->json(['user' => 0]);
-        }
+
+            $validatedData = $request->validate([
+
+                'name'=>'required|max:55',
+                'email'=>'email|required|',
+                'password' => 'required|',
+                'userType'=>'required|',
+                'contact' => 'max:20|',
+                'address'=>'max:400|',
+            ]);
+
+            // return $request;
+            $validatedData['password'] = bcrypt($request->password);
+
+            // return $request;
+            $user = User::create($validatedData);
+
+        return response(['user'=> $user]);
     }
 }
