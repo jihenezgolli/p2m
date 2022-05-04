@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminComponent } from './components/admin/admin.component';
-import { AdminLoginComponent } from './components/admin-login/admin-login.component';
-import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UsersComponent } from './components/users/users.component';
 import { CategoryComponent } from './components/category/category.component';
@@ -34,8 +32,6 @@ const routes: Routes = [
     { path:'account', component: AccountComponent },
     { path:'**', component: PageNotFoundComponent }
   ] },
-  { path:'adminLogin', component: AdminLoginComponent },
-  { path:'adminRegister', component: AdminRegisterComponent },
   { path:'ws', component: UIComponent, children: [
     {path:'', redirectTo:'home', pathMatch:'full'},
     { path:'home', component: HomeComponent },

@@ -9,7 +9,7 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class UserRegisterComponent implements OnInit {
 
-  registrationForm: FormGroup;
+  registrationForm: FormGroup ;
 
   constructor(private formBuilder: FormBuilder, private usersServ: UsersService) { }
 
@@ -23,7 +23,7 @@ export class UserRegisterComponent implements OnInit {
       'email': [null, [Validators.required, Validators.email]],
       'password': [null, [Validators.required, Validators.minLength(6)]],
       'userType': ['user', Validators.required],
-      'contact': [null, Validators.pattern(/^\d{3}-\d{3}-\d{4}$/)],
+      'contact': [null, Validators.pattern(/^\d{8}$/)],
       'address': [null]
     });
   }

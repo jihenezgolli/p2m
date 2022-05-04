@@ -13,7 +13,7 @@
                             <mat-label>Name</mat-label>
                             <input type="text" matInput autocomplete="off" formControlName="name" required>
                             <mat-hint *ngIf="accountForm.controls.name.touched && !accountForm.controls.name.valid">
-                                Please insert valid name.
+                                Please insert valid name
                             </mat-hint>
                         </mat-form-field>
                     </td>
@@ -26,6 +26,9 @@
                             </mat-hint>
                         </mat-form-field>
                     </td>
+                </tr>
+                <tr>
+
                     <td>
                         <mat-form-field appearance="outline">
                             <mat-label>Password</mat-label>
@@ -34,15 +37,6 @@
                                 Please insert min 6 character
                             </mat-hint>
                         </mat-form-field>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <mat-radio-group formControlName="userType" required>
-                            <label>Select:</label>
-                            <mat-radio-button value="user">User</mat-radio-button>
-                            <mat-radio-button value="admin" disabled>Admin</mat-radio-button>
-                        </mat-radio-group>
                     </td>
                     <td>
                         <mat-form-field appearance="outline">

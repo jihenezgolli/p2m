@@ -1,7 +1,7 @@
 <div class="main-div">
     <div class="first-div">
 
-        <form {formGroup}="loginForm" (submit)="onSubmit()">
+        <form [formGroup]="loginForm" (submit)="onSubmit()">
             <h1>Welcome Back</h1>
             <p id="descr">Enter your email and password to sign in</p>
             <label>Email</label>
@@ -23,9 +23,6 @@
                 </mat-hint>
             </div>
             <div class="spacer"></div>
-            <p class="shift-right">
-                <a class="forgot-password" href="#">Forgot your password ?</a>
-            </p>
             <div class="under-btn">
                 <button class="login-btn" type="submit" color="accent" [disabled]="!loginForm.valid">Login</button>
                 <br>

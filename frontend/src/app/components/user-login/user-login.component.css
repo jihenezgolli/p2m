@@ -14,10 +14,6 @@ h1 {
     height: 10px;
 }
 
-.shift-right {
-    text-align: end;
-}
-
 .input-margin {
     margin-left: 7px;
 }
@@ -51,17 +47,6 @@ h1 {
 .first-div {
     width: 420px;
     padding: 100px 75px 0px 250px;
-}
-
-.forgot-password {
-    color: #808080;
-    text-decoration: none;
-}
-
-.forgot-password:hover {
-    color: #808080;
-    text-decoration: underline;
-    transition: all 0.3s ease-in-out;
 }
 
 .under-btn p {
