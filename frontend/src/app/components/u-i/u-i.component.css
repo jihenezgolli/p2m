@@ -3,6 +3,7 @@ mat-toolbar {
     top: 0;
     z-index: 1000;
     padding: 0 30px;
+    background-color: red;
 }
 
 .spacer {
@@ -12,6 +13,7 @@ mat-toolbar {
 .mat-icon-button{
     margin: 0 5px;
 }
-.mat-tool-bar{
-  color: red;
+mat-icon{
+  color:black;
+  matBadgeColor:black;
 }
