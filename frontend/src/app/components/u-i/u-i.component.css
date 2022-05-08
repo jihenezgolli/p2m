@@ -10,10 +10,17 @@ mat-toolbar {
     flex: 1 1 auto;
 }
 
-.mat-icon-button{
+.mat-icon-button {
     margin: 0 5px;
 }
+<<<<<<< HEAD
 mat-icon{
   color:black;
   matBadgeColor:black;
 }
+=======
+
+.heightFix {
+    min-height: 90%;
+}
+>>>>>>> 672a6dee845c43a308ac4dc628c1233c6a8da70f

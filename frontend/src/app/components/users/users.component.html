@@ -1,75 +1,75 @@
 <mat-card>
-    <mat-card-header>
-        <mat-card-title>
-            <h1>Users</h1>
-        </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <h4 *ngIf="users?.length == 0">No Data Found</h4>
-      <div [hidden]="users?.length == 0">
+  <mat-card-header>
+      <mat-card-title>
+          <h1>Users</h1>
+      </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <h4 *ngIf="users?.length == 0">No Data Found</h4>
+    <div [hidden]="users?.length == 0">
 
-      <mat-form-field>
-        <mat-label>Filter</mat-label>
-        <input matInput (keyup)="applyFilter($event)" autocomplete="off" placeholder="Search">
-      </mat-form-field>
-      
-      <div class="mat-elevation-z8">
-        <table mat-table [dataSource]="dataSource" matSort>
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" autocomplete="off" placeholder="Search">
+    </mat-form-field>
 
-          <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
-            <td mat-cell *matCellDef="let row"> {{row.id}} </td>
-          </ng-container>
-      
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-            <td mat-cell *matCellDef="let row"> {{row.name}} </td>
-          </ng-container>
-      
-          <ng-container matColumnDef="email">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
-            <td mat-cell *matCellDef="let row"> {{row.email}} </td>
-          </ng-container>
-      
-          <ng-container matColumnDef="userType">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> User-Type </th>
-            <td mat-cell *matCellDef="let row"> {{row.userType}} </td>
-          </ng-container>
-      
-          <ng-container matColumnDef="contact">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact </th>
-            <td mat-cell *matCellDef="let row"> {{row.contact}} </td>
-          </ng-container>
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
 
-          <ng-container matColumnDef="address">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
-            <td mat-cell *matCellDef="let row"> {{row.address}} </td>
-          </ng-container>
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+          <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+        </ng-container>
 
-          <ng-container matColumnDef="edit">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Edit </th>
-            <td mat-cell *matCellDef="let row">
-              <button mat-mini-fab color="accent" [disabled]="row.userType == 'admin'" (click)="openDialog(row.id, dataSource.filteredData.indexOf(row))">
-                <mat-icon>edit</mat-icon>
-              </button>
-            </td>
-          </ng-container>
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+        </ng-container>
 
-          <ng-container matColumnDef="delete">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Delete </th>
-            <td mat-cell *matCellDef="let row">
-              <button mat-mini-fab color="warn" [disabled]="row.userType == 'admin'" (click)="delete(row.id, dataSource.filteredData.indexOf(row))">
-                <mat-icon>delete</mat-icon>
-              </button>
-            </td>
-          </ng-container>
-      
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-      
-        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-      </div>
-      </div>
-    </mat-card-content>
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+          <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="userType">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> User-Type </th>
+          <td mat-cell *matCellDef="let row"> {{row.userType}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="contact">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact </th>
+          <td mat-cell *matCellDef="let row"> {{row.contact}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="address">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
+          <td mat-cell *matCellDef="let row"> {{row.address}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="edit">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Edit </th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-mini-fab color="accent" [disabled]="row.userType == 'admin'" (click)="openDialog(row.id, dataSource.filteredData.indexOf(row))">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Delete </th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-mini-fab color="warn" [disabled]="row.userType == 'admin'" (click)="delete(row.id, dataSource.filteredData.indexOf(row))">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+    </div>
+  </mat-card-content>
 </mat-card>

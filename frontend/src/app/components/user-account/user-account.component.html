@@ -5,7 +5,7 @@
         <mat-card-subtitle>Edit.</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-        <form [formGroup]="accountForm" (submit)="onSubmit()">
+        <form {formGroup}="accountForm" (submit)="onSubmit()">
             <table id="accountDetails">
                 <tr>
                     <td>
@@ -78,9 +78,10 @@
     </mat-card-header>
     <mat-card-content>
 
-<h4 *ngIf="orders?.length == 0">No Data Found</h4>
-<div class="container" [hidden]="orders?.length == 0">
+        <h4 *ngIf="orders?.length == 0">No Data Found</h4>
+        <div class="container" [hidden]="orders?.length == 0">
 
+<<<<<<< HEAD
     <mat-form-field>
         <mat-label>Filter</mat-label>
         <input matInput (keyup)="applyOrdersFilter($event)" autocomplete="off" placeholder="Search">
@@ -88,17 +89,22 @@
 
     <div class="mat-elevation-z8">
         <table mat-table [dataSource]="ordersDataSource" matSort>
+=======
+            <mat-form-field>
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyOrdersFilter($event)" autocomplete="off" placeholder="Search">
+            </mat-form-field>
+>>>>>>> 672a6dee845c43a308ac4dc628c1233c6a8da70f
 
-          <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
-            <td mat-cell *matCellDef="let row"> {{row?.id}} </td>
-          </ng-container>
+            <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="ordersDataSource" matSort>
 
-          <ng-container matColumnDef="total">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Total </th>
-            <td mat-cell *matCellDef="let row"> {{row?.total}} </td>
-          </ng-container>
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+                        <td mat-cell *matCellDef="let row"> {{row?.id}} </td>
+                    </ng-container>
 
+<<<<<<< HEAD
           <ng-container matColumnDef="date">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
             <td mat-cell *matCellDef="let row"> {{row?.created_at | date: 'short'}} </td>
@@ -110,8 +116,26 @@
 
         <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
     </div>
+=======
+                    <ng-container matColumnDef="total">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Total </th>
+                        <td mat-cell *matCellDef="let row"> {{row?.total}} </td>
+                    </ng-container>
+>>>>>>> 672a6dee845c43a308ac4dc628c1233c6a8da70f
 
-</div>
+                    <ng-container matColumnDef="date">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+                        <td mat-cell *matCellDef="let row"> {{row?.created_at | date: 'short'}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedOrdersColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedOrdersColumns;"></tr>
+                </table>
+
+                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+
+        </div>
 
     </mat-card-content>
 </mat-card>
@@ -122,9 +146,10 @@
     </mat-card-header>
     <mat-card-content>
 
-<h4 *ngIf="orderDetails?.length == 0">No Data Found</h4>
-<div class="container" [hidden]="orderDetails?.length == 0">
+        <h4 *ngIf="orderDetails?.length == 0">No Data Found</h4>
+        <div class="container" [hidden]="orderDetails?.length == 0">
 
+<<<<<<< HEAD
     <mat-form-field>
         <mat-label>Filter</mat-label>
         <input matInput (keyup)="applyOrderDetailsFilter($event)" autocomplete="off" placeholder="Search">
@@ -132,22 +157,27 @@
 
     <div class="mat-elevation-z8">
         <table mat-table [dataSource]="orderDetailsDataSource" matSort>
+=======
+            <mat-form-field>
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyOrderDetailsFilter($event)" autocomplete="off" placeholder="Search">
+            </mat-form-field>
+>>>>>>> 672a6dee845c43a308ac4dc628c1233c6a8da70f
 
-          <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
-            <td mat-cell *matCellDef="let row"> {{row?.id}} </td>
-          </ng-container>
+            <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="orderDetailsDataSource" matSort>
 
-          <ng-container matColumnDef="orderId">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Id </th>
-            <td mat-cell *matCellDef="let row"> {{row?.orderId}} </td>
-          </ng-container>
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+                        <td mat-cell *matCellDef="let row"> {{row?.id}} </td>
+                    </ng-container>
 
-          <ng-container matColumnDef="productName">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Product Name </th>
-            <td mat-cell *matCellDef="let row"> {{row?.product.name}} </td>
-          </ng-container>
+                    <ng-container matColumnDef="orderId">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Id </th>
+                        <td mat-cell *matCellDef="let row"> {{row?.orderId}} </td>
+                    </ng-container>
 
+<<<<<<< HEAD
           <ng-container matColumnDef="quantity">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </th>
             <td mat-cell *matCellDef="let row"> {{row?.quantity}} </td>
@@ -159,8 +189,26 @@
 
         <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
     </div>
+=======
+                    <ng-container matColumnDef="productName">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Product Name </th>
+                        <td mat-cell *matCellDef="let row"> {{row?.product.name}} </td>
+                    </ng-container>
+>>>>>>> 672a6dee845c43a308ac4dc628c1233c6a8da70f
 
-</div>
+                    <ng-container matColumnDef="quantity">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </th>
+                        <td mat-cell *matCellDef="let row"> {{row?.quantity}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedOrderDetailsColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedOrderDetailsColumns;"></tr>
+                </table>
+
+                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+
+        </div>
 
     </mat-card-content>
 </mat-card>

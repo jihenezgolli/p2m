@@ -103,7 +103,11 @@ class UserController extends Controller
         if(auth()->attempt($loginData)) {
                 return response()->json(['user' => auth()->user()]);
 
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 672a6dee845c43a308ac4dc628c1233c6a8da70f
         } else {
             return response()->json(['user' => 0]);
         }
@@ -111,8 +115,13 @@ class UserController extends Controller
     }
 
     public function register(Request $request)
+<<<<<<< HEAD
     {
 
+=======
+    {      
+        
+>>>>>>> 672a6dee845c43a308ac4dc628c1233c6a8da70f
             $validatedData = $request->validate([
 
                 'name'=>'required|max:55',
@@ -122,12 +131,20 @@ class UserController extends Controller
                 'contact' => 'max:20|',
                 'address'=>'max:400|',
             ]);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 672a6dee845c43a308ac4dc628c1233c6a8da70f
             // return $request;
             $validatedData['password'] = bcrypt($request->password);
 
             // return $request;
+<<<<<<< HEAD
             $user = User::create($validatedData);
+=======
+            $user = User::create($validatedData); 
+>>>>>>> 672a6dee845c43a308ac4dc628c1233c6a8da70f
 
         return response(['user'=> $user]);
     }

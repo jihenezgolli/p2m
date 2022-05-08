@@ -18,11 +18,11 @@ export class CategoriesService {
     this.http.post('http://localhost:8000/api/category', data).subscribe(
       res => {
         if(res['category'] == null){
-          this.snackBar.open('Title already exists.', 'Dismiss', {duration: 3000});
+          this.snackBar.open('Title already exists', 'Dismiss', {duration: 3000});
         } else {
           this.categories.push(res['category']);
           this.categoriesChanged.next(this.categories);
-          this.snackBar.open('Data inserted successfully.', 'Dismiss', {duration: 3000});
+          this.snackBar.open('Data inserted successfully', 'Dismiss', {duration: 3000});
         }
       }
     );
@@ -44,7 +44,7 @@ export class CategoriesService {
   delete(id, index) {
     this.http.delete('http://localhost:8000/api/category/'+id).subscribe(
       res => {
-        this.snackBar.open('Deleted.', 'Dismiss', {duration: 3000});
+        this.snackBar.open('Deleted', 'Dismiss', {duration: 3000});
         this.categories.splice(index, 1);
         this.categoriesChanged.next(this.categories);
       }
@@ -54,7 +54,7 @@ export class CategoriesService {
   edit(data, id, index) {
     this.http.put('http://localhost:8000/api/category/'+id, data).subscribe(
       res => {
-        this.snackBar.open('Edited.', 'Dismiss', {duration: 3000});
+        this.snackBar.open('Edited', 'Dismiss', {duration: 3000});
         this.categories[index] = res['category'];
         this.categoriesChanged.next(this.categories);
       }

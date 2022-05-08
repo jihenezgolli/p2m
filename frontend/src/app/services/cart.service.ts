@@ -60,7 +60,7 @@ export class CartService {
   deleteOrder(id, index) {
     this.http.delete('http://localhost:8000/api/order/'+id).subscribe(
       res => {
-        this.snackBar.open('Deleted.', 'Dismiss', {duration: 3000});
+        this.snackBar.open('Deleted', 'Dismiss', {duration: 3000});
         this.orders.splice(index, 1);
         this.ordersChanged.next(this.orders);
       }
@@ -70,7 +70,7 @@ export class CartService {
   deleteOrderDetail(id, index) {
     this.http.delete('http://localhost:8000/api/orderDetail/'+id).subscribe(
       res => {
-        this.snackBar.open('Deleted.', 'Dismiss', {duration: 3000});
+        this.snackBar.open('Deleted', 'Dismiss', {duration: 3000});
         this.orderDetails.splice(index, 1);
         this.orderDetailsChanged.next(this.orderDetails);
       }
@@ -80,7 +80,7 @@ export class CartService {
   editOrder(data, id, index) {
     this.http.put('http://localhost:8000/api/order/'+id, data).subscribe(
       res => {
-        this.snackBar.open('Edited.', 'Dismiss', {duration: 3000});
+        this.snackBar.open('Edited', 'Dismiss', {duration: 3000});
         this.orders[index] = res['order'];
         this.orderDetailsChanged.next(this.orders);
       }
@@ -90,7 +90,7 @@ export class CartService {
   editOrderDetail(data, id, index) {
     this.http.put('http://localhost:8000/api/orderDetail/'+id, data).subscribe(
       res => {
-        this.snackBar.open('Edited.', 'Dismiss', {duration: 3000});
+        this.snackBar.open('Edited', 'Dismiss', {duration: 3000});
         this.orderDetails[index] = res['orderDetail'];
         this.orderDetailsChanged.next(this.orderDetails);
       }

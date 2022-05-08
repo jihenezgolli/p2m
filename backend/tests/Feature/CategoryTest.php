@@ -33,15 +33,26 @@ class CategoryTest extends TestCase
     //
     public function test_update_category(){
         $category=['title'=>'jihene','description'=>'jihene@gmail.com'];
+<<<<<<< HEAD
         $this->json('PUT','api/category/14',$category,['Accept'=>'application/json'] )->assertStatus(200);
+=======
+        $this->json('PUT','api/category/5',$category,['Accept'=>'application/json'] )->assertStatus(200);
+>>>>>>> 672a6dee845c43a308ac4dc628c1233c6a8da70f
     }
 
     public function test_destroy_category (){
 
+<<<<<<< HEAD
         $this->json('DELETE','api/category/4',['Accept'=>'application/json'] )->assertStatus(200);
     }
     public function test_get_by_id_category(){
         $this->get('api/category/7')
+=======
+        $this->json('DELETE','api/category/6',['Accept'=>'application/json'] )->assertStatus(200);
+    }
+    public function test_get_by_id_category(){
+        $this->get('api/category/8')
+>>>>>>> 672a6dee845c43a308ac4dc628c1233c6a8da70f
         ->assertStatus(200)  ;
     }
     }

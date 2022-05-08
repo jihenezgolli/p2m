@@ -1,11 +1,17 @@
-.container{
-    margin: 25px;
-}
-.mat-elevation-z8 {
+.mat-elevation-z3 {
     width: 75%;
     height: 75%;
 }
+<<<<<<< HEAD
 .mat-button {
   color: red;
+=======
+>>>>>>> 672a6dee845c43a308ac4dc628c1233c6a8da70f
 
+.mat-button {
+    color: #333333;
+}
+
+.accent {
+    color: black;
 }

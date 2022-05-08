@@ -1,12 +1,12 @@
 <h1 mat-dialog-title>Edit</h1>
 <mat-dialog-content>
-    <form [formGroup]="editForm" (submit)="onSubmit()">
+    <form {formGroup}="editForm" (submit)="onSubmit()">
         <p>
             <mat-form-field appearance="outline">
                 <mat-label>Quantity</mat-label>
                 <input type="number" min="1" matInput autocomplete="off" formControlName="quantity" required>
                 <mat-hint *ngIf="editForm.controls.quantity.touched && !editForm.controls.quantity.valid">
-                    Please insert valid quantity.
+                    Please insert valid quantity
                 </mat-hint>
             </mat-form-field>
         </p>
@@ -17,6 +17,6 @@
     </form>
 </mat-dialog-content>
 <!-- <mat-dialog-actions> -->
-    <!-- <button type="button" mat-raised-button mat-dialog-close color="warn">Close</button> -->
-    <!-- <button class="mat-raised-button mat-accent" (click)="save()">Save</button> -->
+<!-- <button type="button" mat-raised-button mat-dialog-close color="warn">Close</button> -->
+<!-- <button class="mat-raised-button mat-accent" (click)="save()">Save</button> -->
 <!-- </mat-dialog-actions> -->

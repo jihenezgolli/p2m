@@ -26,16 +26,20 @@ export class UsersService {
     this.http.post('http://localhost:8000/api/register', data).subscribe(
       res => {
         if(res['user'] == null){
+<<<<<<< HEAD
          this.snackBar.open('Email already exists.', 'Dismiss', {duration: 3000});
+=======
+          this.snackBar.open('Email already exists', 'Dismiss', {duration: 3000});
+>>>>>>> 672a6dee845c43a308ac4dc628c1233c6a8da70f
         } else if(res['user'].userType == 'user') {
           this.users.push(res['user']);
           this.usersChanged.next(this.users);
-          this.snackBar.open('Registered successful.', 'Dismiss', {duration: 3000});
+          this.snackBar.open('Registered successful', 'Dismiss', {duration: 3000});
           this.router.navigate(['ws/userLogin']);
         } else {
           this.users.push(res['user']);
           this.usersChanged.next(this.users);
-          this.snackBar.open('Registered successful.', 'Dismiss', {duration: 3000});
+          this.snackBar.open('Registered successful', 'Dismiss', {duration: 3000});
           this.router.navigate(['adminLogin']);
         }
       }
@@ -46,11 +50,18 @@ export class UsersService {
     this.http.post('http://localhost:8000/api/login', data).subscribe(
       res => {
         //if(res['user'] == 0) {
+<<<<<<< HEAD
           //this.snackBar.open('Email is incorrect.', 'Dismiss', {duration: 3000});
         //} else
         if (res['user'] == 1) {
           this.snackBar.open('Password is incorrect.', 'Dismiss', {duration: 3000});
         } else {
+=======
+          //this.snackBar.open('Email is incorrect', 'Dismiss', {duration: 3000});
+        //} else if (res['user'] == 1) {
+          //this.snackBar.open('Password is incorrect', 'Dismiss', {duration: 3000});
+        //} else {
+>>>>>>> 672a6dee845c43a308ac4dc628c1233c6a8da70f
           this.account = res['user'];
           this.accountChanged.next(this.account);
           sessionStorage.setItem("sessionUserData", JSON.stringify(res['user']));
@@ -61,7 +72,7 @@ export class UsersService {
           }
           this.snackBar.open('Login successful', 'Dismiss', {duration: 3000});
         }
-      }
+      //}
     );
   }
 
@@ -90,7 +101,7 @@ export class UsersService {
   delete(id, index) {
     this.http.delete('http://localhost:8000/api/user/'+id).subscribe(
       res => {
-        this.snackBar.open('Deleted.', 'Dismiss', {duration: 3000});
+        this.snackBar.open('Deleted', 'Dismiss', {duration: 3000});
         this.users.splice(index, 1);
         this.usersChanged.next(this.users);
       }
@@ -100,7 +111,7 @@ export class UsersService {
   edit(data, id, index) {
     this.http.put('http://localhost:8000/api/user/'+id, data).subscribe(
       res => {
-        this.snackBar.open('Edited.', 'Dismiss', {duration: 3000});
+        this.snackBar.open('Edited', 'Dismiss', {duration: 3000});
         this.users[index] = res['user'];
         this.usersChanged.next(this.users);
       }
@@ -113,7 +124,7 @@ export class UsersService {
         this.account = res['user'];
         this.accountChanged.next(this.account);
         sessionStorage.setItem("sessionUserData", JSON.stringify(res['user']));
-        this.snackBar.open('Edited.', 'Dismiss', {duration: 3000});
+        this.snackBar.open('Edited', 'Dismiss', {duration: 3000});
       }
     );
   }

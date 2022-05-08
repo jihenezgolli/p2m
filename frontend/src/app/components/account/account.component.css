@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 mat-toolbar {
   padding: 0 20px;
   box-shadow: 0 -3px 1px -2px rgb(0 0 0 / 20%), 0 -2px 2px 0 rgb(0 0 0 / 14%), 0 -1px 3px 0 rgb(0 0 0 / 12%);
@@ -12,3 +13,30 @@ mat-toolbar {
   margin: auto;
   font-size: small;
 }
+=======
+mat-card {
+    margin: 250px auto;
+}
+
+mat-card-title {
+    color: #3f51b5;
+}
+
+mat-card-header {
+    justify-content: center;
+    text-align: center;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-radio-button {
+    margin: 0 12px;
+}
+>>>>>>> 672a6dee845c43a308ac4dc628c1233c6a8da70f

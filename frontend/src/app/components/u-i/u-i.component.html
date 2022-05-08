@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <mat-toolbar  class="mat-elevation-z10" >
   <span>E-shop</span>
   <span class="spacer"></span>
@@ -35,3 +36,44 @@
 </mat-toolbar>
 <router-outlet></router-outlet>
 
+=======
+<mat-toolbar class="mat-elevation-z2">
+    <span>E-shop</span>
+    <span class="spacer"></span>
+    <a mat-icon-button routerLink="home">
+        <mat-icon>home</mat-icon>
+    </a>
+    <button mat-icon-button {matMenuTriggerFor}="shopMenu" {matMenuTriggerData}="categories">
+        <mat-icon>store</mat-icon>
+    </button>
+    <mat-menu #shopMenu="matMenu" xPosition="before">
+        <ng-template matMenuContent>
+            <button mat-menu-item *ngFor="let category of categories" routerLink="shop/{{category.id}}/{{category.title}}">{{category.title}}</button>
+        </ng-template>
+    </mat-menu>
+    <a mat-icon-button routerLink="cart">
+        <mat-icon matBadge="{{items?.length}}" matBadgeColor="accent">shopping_cart</mat-icon>
+    </a>
+    <button mat-icon-button {matMenuTriggerFor}="menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" xPosition="before">
+        <button mat-menu-item routerLink="userAccount">
+            <mat-icon class="icon">account_circle</mat-icon>
+            Account
+        </button>
+        <button mat-menu-item routerLink="userLogin" *ngIf="!sessionUserData">
+            <mat-icon class="icon">exit_to_app</mat-icon>
+            Login
+        </button>
+        <button mat-menu-item *ngIf="sessionUserData" (click)="logout()">
+            <mat-icon class="icon">exit_to_app</mat-icon>
+            Logout
+        </button>
+    </mat-menu>
+</mat-toolbar>
+<div class="heightFix">
+    <router-outlet></router-outlet>
+</div>
+<app-admin-footer></app-admin-footer>
+>>>>>>> 672a6dee845c43a308ac4dc628c1233c6a8da70f

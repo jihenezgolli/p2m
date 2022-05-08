@@ -80,7 +80,7 @@ export class CartComponent implements OnInit, OnDestroy {
           this.cartServ.addOrderDetails(this.products[i]).subscribe(
             res => {
               if(i == (this.products.length - 1)) {
-                this.snackBar.open('Order details saved successfully.', 'Dismiss', {duration: 3000});
+                this.snackBar.open('Order details saved successfully', 'Dismiss', {duration: 3000});
                 this.cartServ.clearCart();
                 this.items = null;
                 this.products = this.items;

@@ -18,11 +18,11 @@ export class ProductService {
     this.http.post('http://localhost:8000/api/product', fd).subscribe(
       res => {
         if(res['product'] == null){
-          this.snackBar.open('Name already exists.', 'Dismiss', {duration: 3000});
+          this.snackBar.open('Name already exists', 'Dismiss', {duration: 3000});
         } else {
           this.products.push(res['product']);
           this.productsChanged.next(this.products);
-          this.snackBar.open('Data inserted successfully.', 'Dismiss', {duration: 3000});
+          this.snackBar.open('Data inserted successfully', 'Dismiss', {duration: 3000});
         }
       }
     );
@@ -44,7 +44,7 @@ export class ProductService {
   delete(id, index) {
     this.http.delete('http://localhost:8000/api/product/'+id).subscribe(
       res => {
-        this.snackBar.open('Deleted.', 'Dismiss', {duration: 3000});
+        this.snackBar.open('Deleted', 'Dismiss', {duration: 3000});
         this.products.splice(index, 1);
         this.productsChanged.next(this.products);
       }
@@ -54,7 +54,7 @@ export class ProductService {
   edit(data, id, index) {
     this.http.post('http://localhost:8000/api/product/'+id+'?_method=PUT', data).subscribe(
       res => {
-        this.snackBar.open('Edited.', 'Dismiss', {duration: 3000});
+        this.snackBar.open('Edited', 'Dismiss', {duration: 3000});
         this.products[index] = res['product'];
         this.productsChanged.next(this.products);
       }

@@ -38,7 +38,7 @@ export class ProductDetailsComponent implements OnInit {
   add(){
     this.items = JSON.parse(sessionStorage.getItem('sessionCartItems')) || [];
     if(this.items.some(i => i.id === this.product.id)) {
-      this.snackBar.open('Added to cart.', 'Dismiss', {duration: 3000});
+      this.snackBar.open('Added to cart', 'Dismiss', {duration: 3000});
     } else {
       this.product.quantity = 1;
       this.items.push(this.product);

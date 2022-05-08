@@ -38,6 +38,12 @@ import { EditOrderComponent } from './components/edit-order/edit-order.component
 import { ViewOrderComponent } from './components/view-order/view-order.component';
 import { ViewOrderDetailComponent } from './components/view-order-detail/view-order-detail.component';
 import { EditOrderDetailComponent } from './components/edit-order-detail/edit-order-detail.component';
+import {MatCardModule} from '@angular/material/card';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+
+
 
 @NgModule({
   declarations: [
@@ -72,7 +78,7 @@ import { EditOrderDetailComponent } from './components/edit-order-detail/edit-or
     EditOrderComponent,
     ViewOrderComponent,
     ViewOrderDetailComponent,
-    EditOrderDetailComponent
+    EditOrderDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,8 +87,11 @@ import { EditOrderDetailComponent } from './components/edit-order-detail/edit-or
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    MatCardModule,
+    MatFormFieldModule,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
@@ -90,7 +99,7 @@ import { EditOrderDetailComponent } from './components/edit-order-detail/edit-or
     EditCategoryComponent,
     EditProductComponent,
     EditOrderComponent,
-    EditOrderDetailComponent
+    EditOrderDetailComponent,
   ]
 })
 export class AppModule { }

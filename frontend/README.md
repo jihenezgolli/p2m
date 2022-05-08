@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # E-shop
+=======
+# E-Shop
+>>>>>>> 672a6dee845c43a308ac4dc628c1233c6a8da70f
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.
 

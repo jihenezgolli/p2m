@@ -1,12 +1,8 @@
-.container{
-    margin: 25px;
-}
-
 table {
     width: 100%;
 }
 
-td{
+td {
     max-width: 300px;
 }
 
@@ -14,7 +10,7 @@ td{
     font-size: 14px;
     width: 100%;
 }
-.mat-mini-fab{
-  color:#333333;
 
+.mat-mini-fab {
+    color: #333333;
 }

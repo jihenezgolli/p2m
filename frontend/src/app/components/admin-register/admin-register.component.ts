@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UsersService } from 'src/app/services/users.service';
+import { FormBuilder, FormGroup, Validators , ReactiveFormsModule} from '@angular/forms';
+import { UsersService } from 'src/app/services/users.service'; 
 
 @Component({
   selector: 'app-admin-register',

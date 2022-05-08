@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { AdminComponent } from './components/admin/admin.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
@@ -53,4 +54,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
