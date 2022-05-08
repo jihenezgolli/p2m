@@ -41,10 +41,10 @@ class ProductTest extends TestCase
 
     public function test_destroy_product (){
 
-        $this->json('DELETE','api/product/46',['Accept'=>'application/json'] )->assertStatus(200);
+        $this->json('DELETE','api/product/55',['Accept'=>'application/json'] )->assertStatus(200);
     }
     public function test_get_by_id_product(){
-        $this->get('api/product/2')
+        $this->get('api/product/53')
         ->assertStatus(200)  ;
     }
 

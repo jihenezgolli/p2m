@@ -21,16 +21,16 @@ class orderDetailsDetailTest extends TestCase
         ->assertStatus(200)  ;
     }
     public function test_update_orderDetails(){
-        $orderDetails=['orderId'=>'8','productId'=>'41','quantity'=>'1236'];
+        $orderDetails=['orderId'=>'8','productId'=>'4','quantity'=>'1556'];
         $this->json('PUT','api/orderDetail/3',$orderDetails,['Accept'=>'application/json'] )->assertStatus(200);
     }
 
     public function test_destroy_orderDetails (){
 
-        $this->json('DELETE','api/orderDetail/2',['Accept'=>'application/json'] )->assertStatus(200);
+        $this->json('DELETE','api/orderDetail/1',['Accept'=>'application/json'] )->assertStatus(200);
     }
     public function test_get_by_id_orderDetails(){
-        $this->get('api/orderDetail/8')
+        $this->get('api/orderDetail/4')
         ->assertStatus(200)  ;
     }
 
