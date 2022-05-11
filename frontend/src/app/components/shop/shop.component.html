@@ -2,10 +2,10 @@
 <mat-card class="container">
     <mat-card-header>
         <mat-card-title>Shop</mat-card-title>
-        <mat-card-subtitle>Category - {{title}}</mat-card-subtitle>
+        <mat-card-subtitle>Cantegory - {{title}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-        <h4 *ngIf="productsWithSameCategory?.length == 0">No Data Found</h4>
+        <h4 *ngIf="productsWithSameCategory?.length == 0">There is no product for the moment</h4>
         <mat-grid-list cols="4" gutterSize="10px" rowHeight="50px" [hidden]="productsWithSameCategory?.length == 0">
             <mat-grid-tile *ngFor="let product of productsWithSameCategory">
                 <mat-card class="mat-elevation-z3">

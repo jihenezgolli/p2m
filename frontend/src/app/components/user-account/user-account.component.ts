@@ -38,7 +38,6 @@ export class UserAccountComponent implements OnInit, OnDestroy {
         this.accountForm.patchValue({
           name: this.user.name,
           email: this.user.email,
-          userType: this.user.userType,
           contact: this.user.contact,
           address: this.user.address
         });
@@ -54,7 +53,6 @@ export class UserAccountComponent implements OnInit, OnDestroy {
       'name': [null, Validators.required],
       'email': [null, [Validators.required, Validators.email]],
       'password': [null, [Validators.required, Validators.minLength(6)]],
-      'userType': [null, Validators.required],
       'contact': [null, Validators.pattern(/^\d{3}-\d{3}-\d{4}$/)],
       'address': [null]
     });
@@ -67,7 +65,6 @@ export class UserAccountComponent implements OnInit, OnDestroy {
         this.accountForm.patchValue({
           name: this.user.name,
           email: this.user.email,
-          userType: this.user.userType,
           contact: this.user.contact,
           address: this.user.address
         });

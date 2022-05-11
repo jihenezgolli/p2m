@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
+
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,9 +10,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './modules/material/material.module';
 import { AdminComponent } from './components/admin/admin.component';
 import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
-import { AdminFooterComponent } from './components/admin-footer/admin-footer.component';
-import { AdminLoginComponent } from './components/admin-login/admin-login.component';
-import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UsersComponent } from './components/users/users.component';
 import { CategoryComponent } from './components/category/category.component';
@@ -44,16 +41,11 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
     AdminHeaderComponent,
-    AdminFooterComponent,
-    AdminLoginComponent,
-    AdminRegisterComponent,
     DashboardComponent,
     UsersComponent,
     CategoryComponent,
@@ -87,6 +79,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    
     HttpClientModule,
     MaterialModule,
     MatCardModule,

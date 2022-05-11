@@ -78,7 +78,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
-        $user->update($request->all());
+        $user->update([ "name" => $request->name ,"email" => $request->email ,"password" => bcrypt($request->password) ,"contact" => $request->contact , "address" => $request->address]);
         return response()->json(['user' => $user]);
     }
 
@@ -118,7 +118,6 @@ class UserController extends Controller
                 'name'=>'required|max:55',
                 'email'=>'email|required|',
                 'password' => 'required|',
-                'userType'=>'required|',
                 'contact' => 'max:20|',
                 'address'=>'max:400|',
             ]);

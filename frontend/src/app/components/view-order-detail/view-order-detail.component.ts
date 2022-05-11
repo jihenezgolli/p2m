@@ -84,3 +84,6 @@ export class ViewOrderDetailComponent implements OnInit, OnDestroy {
   }
 
 }
+
+
+

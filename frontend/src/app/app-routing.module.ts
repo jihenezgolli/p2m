@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AdminComponent } from './components/admin/admin.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -21,17 +21,18 @@ import { UserGuard } from './guards/user.guard';
 import { OrderComponent } from './components/order/order.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'ws', pathMatch:'full'},
+  { path:'', redirectTo:'ws', pathMatch:'full'},
   { path:'admin', component: AdminComponent, canActivate:[AdminGuard], children: [
-    {path:'', redirectTo:'dashboard', pathMatch:'full'},
+    { path:'', redirectTo:'dashboard', pathMatch:'full'},
     { path:'dashboard', component: DashboardComponent },
     { path:'users', component: UsersComponent },
     { path:'category', component: CategoryComponent },
     { path:'product', component: ProductComponent },
     { path:'order', component: OrderComponent },
     { path:'account', component: AccountComponent },
-    { path:'**', component: PageNotFoundComponent }
-  ] },
+    { path:'**', component: PageNotFoundComponent } ,
+    ] ,
+  },
   { path:'ws', component: UIComponent, children: [
     {path:'', redirectTo:'home', pathMatch:'full'},
     { path:'home', component: HomeComponent },

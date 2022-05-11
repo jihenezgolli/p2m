@@ -8,46 +8,46 @@
     <div class="mat-elevation-z8">
         <table mat-table [dataSource]="orderDetailDataSource" matSort>
 
-          <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
-            <td mat-cell *matCellDef="let row"> {{row.id}} </td>
-          </ng-container>
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+                <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
 
-          <ng-container matColumnDef="orderId">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Order-id </th>
-            <td mat-cell *matCellDef="let row"> {{row.orderId}} </td>
-          </ng-container>
+            <ng-container matColumnDef="orderId">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Order-id </th>
+                <td mat-cell *matCellDef="let row"> {{row.orderId}} </td>
+            </ng-container>
 
-          <ng-container matColumnDef="productId">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Product-id </th>
-            <td mat-cell *matCellDef="let row"> {{row.productId}} </td>
-          </ng-container>
+            <ng-container matColumnDef="productId">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Product-id </th>
+                <td mat-cell *matCellDef="let row"> {{row.productId}} </td>
+            </ng-container>
 
-          <ng-container matColumnDef="quantity">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </th>
-            <td mat-cell *matCellDef="let row"> {{row.quantity}} </td>
-          </ng-container>
+            <ng-container matColumnDef="quantity">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </th>
+                <td mat-cell *matCellDef="let row"> {{row.quantity}} </td>
+            </ng-container>
 
-          <ng-container matColumnDef="edit">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Edit </th>
-            <td mat-cell *matCellDef="let row">
-              <button  (click)="openOrderDetailDialog(row.id, orderDetailDataSource.filteredData.indexOf(row))">
+            <ng-container matColumnDef="edit">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Edit </th>
+                <td mat-cell *matCellDef="let row">
+                    <button (click)="openOrderDetailDialog(row.id, orderDetailDataSource.filteredData.indexOf(row))">
                 <mat-icon>edit</mat-icon>
               </button>
-            </td>
-          </ng-container>
+                </td>
+            </ng-container>
 
-          <ng-container matColumnDef="delete">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Delete </th>
-            <td mat-cell *matCellDef="let row">
-              <button  (click)="deleteOrderDetail(row.id, orderDetailDataSource.filteredData.indexOf(row))">
+            <ng-container matColumnDef="delete">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Delete </th>
+                <td mat-cell *matCellDef="let row">
+                    <button (click)="deleteOrderDetail(row.id, orderDetailDataSource.filteredData.indexOf(row))">
                 <mat-icon>delete</mat-icon>
               </button>
-            </td>
-          </ng-container>
+                </td>
+            </ng-container>
 
-          <tr mat-header-row *matHeaderRowDef="displayedOrderDetailColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedOrderDetailColumns;"></tr>
+            <tr mat-header-row *matHeaderRowDef="displayedOrderDetailColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedOrderDetailColumns;"></tr>
         </table>
 
         <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>

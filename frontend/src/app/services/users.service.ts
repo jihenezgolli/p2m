@@ -45,22 +45,24 @@ export class UsersService {
   login(data){
     this.http.post('http://localhost:8000/api/login', data).subscribe(
       res => {
-        if(res['user'] == 0) {
-          this.snackBar.open('Email is incorrect', 'Dismiss', {duration: 3000});
-        } else if (res['user'] == 1) {
-          this.snackBar.open('Password is incorrect', 'Dismiss', {duration: 3000});
-        } else {
+        //if(res['user'] == 0) {
+          //this.snackBar.open('Email is incorrect', 'Dismiss', {duration: 3000});
+        //} else if (res['user'] == 1) {
+          //this.snackBar.open('Password is incorrect', 'Dismiss', {duration: 3000});
+        //} else {
           this.account = res['user'];
           this.accountChanged.next(this.account);
           sessionStorage.setItem("sessionUserData", JSON.stringify(res['user']));
-          if(JSON.parse(sessionStorage.sessionUserData).userType == 'admin') {
+          if(this.account.userType == 'admin') {
+            console.log("ok");
+            
             this.router.navigate(['admin']);
           } else {
             this.router.navigate(['/']);
           }
           this.snackBar.open('Login successful', 'Dismiss', {duration: 3000});
         }
-      }
+      //}
     );
   }
 
@@ -68,14 +70,13 @@ export class UsersService {
     if(JSON.parse(sessionStorage.sessionUserData).userType == 'admin') {
       sessionStorage.removeItem('sessionUserData');
       this.snackBar.open('Logout successful', 'Dismiss', {duration: 3000});
-      this.router.navigate(['adminLogin']);
     } else {
       sessionStorage.removeItem('sessionUserData');
       this.account = JSON.parse(sessionStorage.getItem('sessionUserData'));
       this.accountChanged.next(this.account);
       this.snackBar.open('Logout successful', 'Dismiss', {duration: 3000});
-      this.router.navigate(['ws/userLogin']);
     }
+    this.router.navigate(['ws/userLogin']);
   }
 
   getAllUsers(){

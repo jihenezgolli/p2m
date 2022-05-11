@@ -1,71 +1,73 @@
-<div class="main-div">
-    <div class="first-div">
-        <form [formGroup]="registrationForm" (submit)="onSubmit()">
-            <h1>Welcome Back</h1>
-            <p id="descr">Create a new account ? Let's start</p>
-            <div class="div-flex">
-                <div>
-                    <div class="spacer"></div>
-                    <label>Name</label>
-                    <div class="spacer"></div>
-                    <div class="input-margin">
-                        <div><input type="text" id="label-style" formControlName="name" autocomplete="off" required></div>
-                        <mat-hint *ngIf="registrationForm.controls.name.touched && !registrationForm.controls.name.valid">
-                            Please insert valid name
-                        </mat-hint>
+<div class="container">
+    <div class="row">
+        <div class="first-div">
+            <form [formGroup]="registrationForm" (submit)="onSubmit()">
+                <h1>Welcome Back</h1>
+                <p id="descr">Create a new account ? Let's start</p>
+                <div class="div-flex">
+                    <div>
+                        <div class="spacer"></div>
+                        <label>Name</label>
+                        <div class="spacer"></div>
+                        <div class="input-margin">
+                            <div><input type="text" id="label-style" formControlName="name" autocomplete="off" required></div>
+                            <mat-hint *ngIf="registrationForm.controls.name.touched && !registrationForm.controls.name.valid">
+                                Please insert valid name
+                            </mat-hint>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="spacer"></div>
+                        <label>Email</label>
+                        <div class="spacer"></div>
+                        <div class="input-margin">
+                            <div><input type="email" id="label-style" formControlName="email" autocomplete="off" required></div>
+                            <mat-hint *ngIf="registrationForm.controls.email.touched && !registrationForm.controls.email.valid">
+                                Please insert valid email
+                            </mat-hint>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="spacer"></div>
+                        <label>Password</label>
+                        <div class="spacer"></div>
+                        <div class="input-margin">
+                            <div><input id="label-style" matInput autocomplete="off" type="password" formControlName="password" required></div>
+                            <mat-hint *ngIf="registrationForm.controls.password.touched && !registrationForm.controls.password.valid">
+                                Please insert min 6 character
+                            </mat-hint>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="spacer"></div>
+                        <label>Contact</label>
+                        <div class="spacer"></div>
+                        <div class="input-margin">
+                            <div><input type="tel" id="label-style" autocomplete="off" formControlName="contact"></div>
+                            <mat-hint *ngIf="!registrationForm.controls.contact.valid">
+                                Pattern: 99999999
+                            </mat-hint>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="spacer"></div>
+                        <label>Address</label>
+                        <div class="spacer"></div>
+                        <div class="input-margin">
+                            <div><input type="text" id="label-style" formControlName="address" autocomplete="off"></div>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div class="spacer"></div>
-                    <label>Email</label>
-                    <div class="spacer"></div>
-                    <div class="input-margin">
-                        <div><input type="email" id="label-style" formControlName="email" autocomplete="off" required></div>
-                        <mat-hint *ngIf="registrationForm.controls.email.touched && !registrationForm.controls.email.valid">
-                            Please insert valid email
-                        </mat-hint>
-                    </div>
+                <div class="under-btn">
+                    <button type="submit" color="accent" class="login-btn" [disabled]="!registrationForm.valid">Register</button>
+                    <br>
+                    <p id="descr">Do you have an account? </p>
+                    <a class="sign-up" routerLink="../userLogin">Sign in</a>
                 </div>
-                <div>
-                    <div class="spacer"></div>
-                    <label>Password</label>
-                    <div class="spacer"></div>
-                    <div class="input-margin">
-                        <div><input id="label-style" matInput autocomplete="off" type="password" formControlName="password" required></div>
-                        <mat-hint *ngIf="registrationForm.controls.password.touched && !registrationForm.controls.password.valid">
-                            Please insert min 6 character
-                        </mat-hint>
-                    </div>
-                </div>
-                <div>
-                    <div class="spacer"></div>
-                    <label>Contact</label>
-                    <div class="spacer"></div>
-                    <div class="input-margin">
-                        <div><input type="tel" id="label-style" autocomplete="off" formControlName="contact"></div>
-                        <mat-hint *ngIf="!registrationForm.controls.contact.valid">
-                            Pattern: 99999999
-                        </mat-hint>
-                    </div>
-                </div>
-                <div>
-                    <div class="spacer"></div>
-                    <label>Address</label>
-                    <div class="spacer"></div>
-                    <div class="input-margin">
-                        <div><input type="text" id="label-style" formControlName="address" autocomplete="off"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="under-btn">
-                <button type="submit" color="accent" class="login-btn" [disabled]="!registrationForm.valid">Register</button>
-                <br>
-                <p id="descr">Do you have an account? </p>
-                <a class="sign-up" routerLink="../userLogin">Sign in</a>
-            </div>
-        </form>
-    </div>
-    <div class="second-div ">
-        <img src="../assets/five.png " alt=" ">
+            </form>
+        </div>
+        <div class="second-div ">
+            <img src="../assets/five.png " alt="">
+        </div>
     </div>
 </div>

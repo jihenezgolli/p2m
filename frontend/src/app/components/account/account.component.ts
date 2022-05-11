@@ -13,19 +13,14 @@ export class AccountComponent implements OnInit, OnDestroy {
 
   accountForm: FormGroup;
   sessionUserId: number = JSON.parse(sessionStorage.sessionUserData).id;
-  user: Users;
+  user: Users = {id : 1 , name: "", email: "", password: "", address: "",userType: "" , contact: 99999999};
   subscription: Subscription;
 
   constructor(private formBuilder: FormBuilder, private usersServ: UsersService) { }
 
   ngOnInit() {
 
-    this.user.id=99999;
-    this.user.name="";
-    this.user.email="";
-    this.user.password="";
-    this.user.userType="";
-    this.user.address="";
+    
 
     this.subscription = this.usersServ.accountChanged.subscribe(
       (user: Users) => {
@@ -33,7 +28,6 @@ export class AccountComponent implements OnInit, OnDestroy {
         this.accountForm.patchValue({
           name: this.user.name,
           email: this.user.email,
-          userType: this.user.userType,
           contact: this.user.contact,
           address: this.user.address
         });
@@ -48,8 +42,7 @@ export class AccountComponent implements OnInit, OnDestroy {
       'name': [null, Validators.required],
       'email': [null, [Validators.required, Validators.email]],
       'password': [null, [Validators.required, Validators.minLength(6)]],
-      'userType': [null, Validators.required],
-      'contact': [null, Validators.pattern(/^\d{3}-\d{3}-\d{4}$/)],
+      'contact': [null, Validators.pattern(/^\d{8}$/)],
       'address': [null]
     });
   }
@@ -61,7 +54,6 @@ export class AccountComponent implements OnInit, OnDestroy {
         this.accountForm.patchValue({
           name: this.user.name,
           email: this.user.email,
-          userType: this.user.userType,
           contact: this.user.contact,
           address: this.user.address
         });

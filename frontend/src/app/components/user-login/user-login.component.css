@@ -45,8 +45,7 @@ h1 {
 }
 
 .first-div {
-    width: 420px;
-    padding: 100px 75px 0px 250px;
+    padding: 75px 75px 0px 250px;
 }
 
 .under-btn p {
@@ -57,41 +56,16 @@ h1 {
     text-align: center;
 }
 
-.sign-up {
-    color: red;
-    text-decoration: none;
-}
-
-.sign-up:hover {
-    color: red;
-    text-decoration: underline red;
-    transition: all 0.3s ease-in-out;
-    ;
-}
-
-.main-div {
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto auto
-}
-
-.input-margin div,
-.input-margin #label-style {
-    display: -webkit-inline-box;
-    width: 375px;
-}
-
-.password-icon {
-    vertical-align: middle;
+p {
+    text-align: center;
 }
 
 img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
+    height: 420px;
+    width: 420px;
 }
 
-.main-div {
-    overflow: hidden;
+main-div {
+    display: grid;
+    grid-template-columns: 50% 50%;
 }

@@ -8,7 +8,7 @@
             <mat-list-item routerLinkActive="active">
                 <a routerLink="dashboard">
                     <mat-icon class="icon">dashboard</mat-icon>
-                    <span>Admin Dashboard</span>
+                    <span> <a routerLink="dashborad">Admin Dashboard</a></span>
                 </a>
             </mat-list-item>
             <mat-list-item routerLinkActive="active">
@@ -35,12 +35,13 @@
                     <span>Order</span>
                 </a>
             </mat-list-item>
-            <mat-list-item routerLinkActive="active">
-                <a routerLink="account">
+            <a routerLink="account">
+                <mat-list-item routerLinkActive="active">
                     <mat-icon class="icon">account_circle</mat-icon>
-                    <span>Account</span>
-                </a>
-            </mat-list-item>
+                    <p>Account</p>
+
+                </mat-list-item>
+            </a>
             <mat-list-item>
                 <a (click)="logout()">
                     <mat-icon class="icon">exit_to_app</mat-icon>
@@ -58,6 +59,5 @@
             <span>E-Shop</span>
         </mat-toolbar>
         <router-outlet></router-outlet>
-        <app-admin-footer></app-admin-footer>
     </mat-sidenav-content>
 </mat-sidenav-container>

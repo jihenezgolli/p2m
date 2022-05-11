@@ -1,0 +1,89 @@
+# Docker Compose file Reference (https://docs.docker.com/compose/compose-file/)
+version: '3.7'
+ 
+# Define services
+services:
+  # Database Service (Mysql)
+  db:
+    image: mysql:latest
+    container_name: db
+    command: ["--default-authentication-plugin=mysql_native_password"]
+    ports:
+      - "3306:3306"
+    restart: always
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: ErrorBD
+      MYSQL_USER: ok
+      MYSQL_PASSWORD: ok
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - backend 
+  db_seeder:
+    image: mysql:8.0
+    volumes:
+      - ./docker/mysql/init.sql:/init.sql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+    entrypoint: [ "bash", "-c", "sleep 10 && mysql --user=root -proot --host=db --port=3306 < /init.sql && exit"] 
+    depends_on:
+      - db
+    networks:
+      - backend 
+  # App backend service
+  app-server:
+    # Configuration for building the docker image for the backend service
+    build:
+      context: backend # Use an image built from the specified dockerfile in the `spring-boot-oauth2-social-login` directory.
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000" # Forward the exposed port 8080 on the container to port 8080 on the host machine
+    restart: always
+    links:
+      - db 
+    depends_on:
+      - db # This service depends on mysql. Start that first. 
+    networks: # Networks to join (Services on the same network can communicate with each other using their name) 
+      - backend
+      - frontend
+    entrypoint: ["bash" , "-c" , "cd /app && php artisan config:clear && php artisan cache:clear && php artisan migrate && php artisan serve --host=0.0.0.0 --port=8000"] # php artisan migrate && php artisan db:seed &&
+ 
+  # Frontend Service 
+  app-client:
+    build:
+      context: frontend # Use an image built from the specified dockerfile in the `angular-11-social-login` directory.
+      dockerfile: Dockerfile
+
+    ports:
+      - "4200:4200" # Map the exposed port 80 on the container to port 8081 on the host machine
+    restart: always
+    depends_on:
+      - app-server
+    networks:
+      - frontend  
+ 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    depends_on:
+      - db
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+    restart: always
+    ports:
+      - 8081:80
+    networks:
+      - backend 
+   
+# Networks to be created to facilitate communication between containers
+networks:
+  backend:
+  frontend: 
+volumes:
+  db_data: 
+  # db-inital: 'docker/mysql/'
+  
+  

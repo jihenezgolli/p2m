@@ -33,5 +33,4 @@ export class UserLoginComponent implements OnInit {
     this.usersServ.login(this.loginForm.value);
     this.loginForm.reset();
   }
-
 }
