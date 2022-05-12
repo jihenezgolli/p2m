@@ -43,23 +43,23 @@ export class CartService {
   }
 
   addOrder(data) {
-    return this.http.post('apiUIrl:8000/api/order', data);
+    return this.http.post(apiUrl+':8000/api/order', data);
   }
 
   addOrderDetails(data) {
-    return this.http.post('apiUIrl:8000/api/orderDetail', data);
+    return this.http.post(apiUrl+':8000/api/orderDetail', data);
   }
 
   getAllOrders() {
-    return this.http.get('apiUIrl:8000/api/order');
+    return this.http.get(apiUrl+':8000/api/order');
   }
 
   getAllOrderDetails() {
-    return this.http.get('apiUIrl:8000/api/orderDetail');
+    return this.http.get(apiUrl+':8000/api/orderDetail');
   }
 
   deleteOrder(id, index) {
-    this.http.delete('apiUIrl:8000/api/order/'+id).subscribe(
+    this.http.delete(apiUrl+':8000/api/order/'+id).subscribe(
       res => {
         this.snackBar.open('Deleted', 'Dismiss', {duration: 3000});
         this.orders.splice(index, 1);
@@ -69,7 +69,7 @@ export class CartService {
   }
 
   deleteOrderDetail(id, index) {
-    this.http.delete('apiUIrl:8000/api/orderDetail/'+id).subscribe(
+    this.http.delete(apiUrl+':8000/api/orderDetail/'+id).subscribe(
       res => {
         this.snackBar.open('Deleted', 'Dismiss', {duration: 3000});
         this.orderDetails.splice(index, 1);
@@ -79,7 +79,7 @@ export class CartService {
   }
 
   editOrder(data, id, index) {
-    this.http.put('apiUIrl:8000/api/order/'+id, data).subscribe(
+    this.http.put(apiUrl+':8000/api/order/'+id, data).subscribe(
       res => {
         this.snackBar.open('Edited', 'Dismiss', {duration: 3000});
         this.orders[index] = res['order'];
@@ -89,7 +89,7 @@ export class CartService {
   }
 
   editOrderDetail(data, id, index) {
-    this.http.put('apiUIrl:8000/api/orderDetail/'+id, data).subscribe(
+    this.http.put(apiUrl+':8000/api/orderDetail/'+id, data).subscribe(
       res => {
         this.snackBar.open('Edited', 'Dismiss', {duration: 3000});
         this.orderDetails[index] = res['orderDetail'];
@@ -99,19 +99,19 @@ export class CartService {
   }
 
   getSingleOrder(id) {
-    return this.http.get('apiUIrl:8000/api/order/'+id+'/edit');
+    return this.http.get(apiUrl+':8000/api/order/'+id+'/edit');
   }
 
   getSingleOrderDetail(id) {
-    return this.http.get('apiUIrl:8000/api/orderDetail/'+id+'/edit');
+    return this.http.get(apiUrl+':8000/api/orderDetail/'+id+'/edit');
   }
 
   getUsersOrders(userId) {
-    return this.http.get('apiUIrl:8000/api/order/'+userId);
+    return this.http.get(apiUrl+':8000/api/order/'+userId);
   }
 
   getUsersOrderDetails(orderId) {
-    return this.http.get('apiUIrl:8000/api/orderDetail/'+orderId);
+    return this.http.get(apiUrl+':8000/api/orderDetail/'+orderId);
   }
 
 }

@@ -24,7 +24,7 @@ export class UsersService {
   }
 
   register(data){
-    this.http.post('apiUIrl:8000/api/register', data).subscribe(
+    this.http.post(apiUrl+':8000/api/register', data).subscribe(
       res => {
         if(res['user'] == null){
           this.snackBar.open('Email already exists', 'Dismiss', {duration: 3000});
@@ -44,7 +44,7 @@ export class UsersService {
   }
 
   login(data){
-    this.http.post('apiUIrl:8000/api/login', data).subscribe(
+    this.http.post(apiUrl+':8000/api/login', data).subscribe(
       res => {
         //if(res['user'] == 0) {
           //this.snackBar.open('Email is incorrect', 'Dismiss', {duration: 3000});
@@ -81,15 +81,15 @@ export class UsersService {
   }
 
   getAllUsers(){
-    return this.http.get('apiUIrl:8000/api/user');
+    return this.http.get(apiUrl+':8000/api/user');
   }
 
   getSingleUsers(id){
-    return this.http.get('apiUIrl:8000/api/user/'+id+'/edit');
+    return this.http.get(apiUrl+':8000/api/user/'+id+'/edit');
   }
 
   delete(id, index) {
-    this.http.delete('apiUIrl:8000/api/user/'+id).subscribe(
+    this.http.delete(apiUrl+':8000/api/user/'+id).subscribe(
       res => {
         this.snackBar.open('Deleted', 'Dismiss', {duration: 3000});
         this.users.splice(index, 1);
@@ -99,7 +99,7 @@ export class UsersService {
   }
 
   edit(data, id, index) {
-    this.http.put('apiUIrl:8000/api/user/'+id, data).subscribe(
+    this.http.put(apiUrl+':8000/api/user/'+id, data).subscribe(
       res => {
         this.snackBar.open('Edited', 'Dismiss', {duration: 3000});
         this.users[index] = res['user'];
@@ -109,7 +109,7 @@ export class UsersService {
   }
 
   editAccount(data, id) {
-    this.http.put('apiUIrl:8000/api/user/'+id, data).subscribe(
+    this.http.put(apiUrl+':8000/api/user/'+id, data).subscribe(
       res => {
         this.account = res['user'];
         this.accountChanged.next(this.account);
