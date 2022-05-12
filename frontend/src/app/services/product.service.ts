@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Products } from '../models/products.model';
 import { Subject } from 'rxjs';
+import { apiUrl } from '../app.const';
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +17,7 @@ export class ProductService {
   constructor(private http: HttpClient, private snackBar: MatSnackBar) { }
 
   add(fd){
-    this.http.post('http://localhost:8000/api/product', fd).subscribe(
+    this.http.post('apiUIrl:8000/api/product', fd).subscribe(
       res => {
         if(res['product'] == null){
           this.snackBar.open('Name already exists', 'Dismiss', {duration: 3000});
@@ -34,15 +36,15 @@ export class ProductService {
   }
 
   getAllProducts(){
-    return this.http.get('http://localhost:8000/api/product');
+    return this.http.get('apiUIrl:8000/api/product');
   }
 
   getSingleProduct(id){
-    return this.http.get('http://localhost:8000/api/product/'+id);
+    return this.http.get('apiUIrl:8000/api/product/'+id);
   }
 
   delete(id, index) {
-    this.http.delete('http://localhost:8000/api/product/'+id).subscribe(
+    this.http.delete('apiUIrl:8000/api/product/'+id).subscribe(
       res => {
         this.snackBar.open('Deleted', 'Dismiss', {duration: 3000});
         this.products.splice(index, 1);
@@ -52,7 +54,7 @@ export class ProductService {
   }
 
   edit(data, id, index) {
-    this.http.post('http://localhost:8000/api/product/'+id+'?_method=PUT', data).subscribe(
+    this.http.post('apiUIrl:8000/api/product/'+id+'?_method=PUT', data).subscribe(
       res => {
         this.snackBar.open('Edited', 'Dismiss', {duration: 3000});
         this.products[index] = res['product'];
